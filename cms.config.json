@@ -253,7 +253,8 @@
           "label": "Small symbol shown after links that open in a new window",
           "type": "string"
         }
-      ]
+      ],
+      "previewPath": ""
     },
     {
       "key": "navigation",
@@ -294,7 +295,8 @@
           "itemLabel": "label",
           "hint": "Drag to change the order. The link for the page you are on is marked automatically."
         }
-      ]
+      ],
+      "previewPath": ""
     },
     {
       "key": "homePage",
@@ -661,7 +663,8 @@
             }
           ]
         }
-      ]
+      ],
+      "previewPath": ""
     },
     {
       "key": "aboutPage",
@@ -922,7 +925,8 @@
           ],
           "hint": "The names of the trustees are in the list called Trustees."
         }
-      ]
+      ],
+      "previewPath": "about.html"
     },
     {
       "key": "graveSearchPage",
@@ -1047,7 +1051,8 @@
           ],
           "itemLabel": "label"
         }
-      ]
+      ],
+      "previewPath": "grave-search/"
     },
     {
       "key": "feesPage",
@@ -1298,7 +1303,8 @@
             }
           ]
         }
-      ]
+      ],
+      "previewPath": "cemetery-fees.html"
     },
     {
       "key": "historyPage",
@@ -1521,7 +1527,8 @@
             }
           ]
         }
-      ]
+      ],
+      "previewPath": "history.html"
     },
     {
       "key": "fundraiserPage",
@@ -1760,7 +1767,8 @@
           ],
           "itemLabel": "caption"
         }
-      ]
+      ],
+      "previewPath": "fundraiser.html"
     },
     {
       "key": "policiesPage",
@@ -1891,7 +1899,8 @@
             }
           ]
         }
-      ]
+      ],
+      "previewPath": "policies.html"
     },
     {
       "key": "contactPage",
@@ -2118,7 +2127,8 @@
             }
           ]
         }
-      ]
+      ],
+      "previewPath": "contact.html"
     },
     {
       "key": "trustees",
@@ -2147,7 +2157,8 @@
           "min": 1,
           "step": 1
         }
-      ]
+      ],
+      "previewPath": "about.html#the-trustees"
     },
     {
       "key": "groundsPhotos",
@@ -2195,7 +2206,8 @@
           "label": "Caption",
           "type": "richtext"
         }
-      ]
+      ],
+      "previewPath": "about.html"
     },
     {
       "key": "feeGroups",
@@ -2282,7 +2294,8 @@
           "label": "Note under the tables",
           "type": "richtext"
         }
-      ]
+      ],
+      "previewPath": "cemetery-fees.html"
     },
     {
       "key": "timeline",
@@ -2321,7 +2334,8 @@
           "label": "Text",
           "type": "text"
         }
-      ]
+      ],
+      "previewPath": "history.html"
     },
     {
       "key": "policySections",
@@ -2370,7 +2384,8 @@
           "label": "Text after the quotation",
           "type": "richtext"
         }
-      ]
+      ],
+      "previewPath": "policies.html"
     },
     {
       "key": "movedPages",
@@ -2434,7 +2449,8 @@
           "label": "Sentence under the button",
           "type": "string"
         }
-      ]
+      ],
+      "previewPath": "about-the-cemetery.html"
     }
   ]
 }
