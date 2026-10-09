@@ -1,5 +1,5 @@
 {
-  "title": "Home — Broadford Cemetery Trust (draft)",
+  "title": "Home (CMS test) Broadford Cemetery Trust",
   "metaDescription": "Broadford Cemetery, Piper Street, Broadford, Victoria — administered by the Broadford Cemetery Trust. Find a grave, cemetery fees, history and contact details.",
   "hero": {
     "image": "assets/images/lawn-section-wide.jpg",
@@ -13,14 +13,14 @@
       {
         "label": "Find a grave",
         "href": "grave-search/index.html",
-        "style": "btn btn--onDark btn--large",
-        "newWindow": false
+        "newWindow": false,
+        "style": "btn btn--onDark btn--large"
       },
       {
         "label": "Contact the Trust",
         "href": "contact.html",
-        "style": "btn btn--onDark btn--large",
-        "newWindow": false
+        "newWindow": false,
+        "style": "btn btn--onDark btn--large"
       }
     ]
   },
@@ -55,14 +55,14 @@
       {
         "label": "Read the cemetery’s history",
         "href": "history.html",
-        "style": "btn btn--secondary",
-        "newWindow": false
+        "newWindow": false,
+        "style": "btn btn--secondary"
       },
       {
         "label": "See the grounds",
         "href": "about.html",
-        "style": "btn btn--secondary",
-        "newWindow": false
+        "newWindow": false,
+        "style": "btn btn--secondary"
       }
     ],
     "figure": {
@@ -80,14 +80,14 @@
       {
         "label": "Send us a message",
         "href": "contact.html",
-        "style": "btn",
-        "newWindow": false
+        "newWindow": false,
+        "style": "btn"
       },
       {
         "label": "Email broadfordct@gmail.com",
         "href": "mailto:broadfordct@gmail.com",
-        "style": "btn btn--secondary",
-        "newWindow": false
+        "newWindow": false,
+        "style": "btn btn--secondary"
       }
     ],
     "notice": {
@@ -102,8 +102,8 @@
       {
         "label": "About the engraved pavers",
         "href": "fundraiser.html",
-        "style": "btn btn--memorial",
-        "newWindow": false
+        "newWindow": false,
+        "style": "btn btn--memorial"
       }
     ],
     "figure": {
