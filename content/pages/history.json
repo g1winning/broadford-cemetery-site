@@ -1,0 +1,55 @@
+{
+  "title": "History — Broadford Cemetery Trust (draft)",
+  "metaDescription": "The history of Broadford Cemetery from its 1867 gazettal, the loss of the records in the 1950s, and the development of the lawn sections and gardens.",
+  "breadcrumbLabel": "History",
+  "header": {
+    "eyebrow": "1867 to today",
+    "heading": "History",
+    "lead": "Broadford Cemetery was gazetted in 1867 and has been in the care of a trust ever since. Much of its written record was lost in the 1950s — but not all of it."
+  },
+  "topFigure": {
+    "image": "assets/images/heritage-walk-monuments.jpg",
+    "width": 1100,
+    "height": 618,
+    "alt": "Nineteenth-century white marble and grey granite memorials, including a tall column and several obelisks enclosed by cast-iron grave surrounds, beside a red sign reading ‘Heritage Walk’.",
+    "caption": "The heritage walk, in the oldest part of the cemetery."
+  },
+  "timelineHeading": "Broadford Cemetery",
+  "quote": {
+    "text": "Broadford Cemetery is not just a resting place for the dead; it is a place of comfort, contemplation and conversation for our community.",
+    "source": "Broadford Cemetery Trust"
+  },
+  "law": {
+    "heading": "Victorian cemetery law — the wider context",
+    "body": "<p>Cemeteries were usually developed in association with particular churches or as a result of public meetings of concerned citizens. In 1854, an ”Act for the Establishment and Management of Cemeteries in the Colony of Victoria” was passed by the Victorian Government forming the basis of cemetery management as we know it today. The Government had the power to appoint and remove trustees and lend or pay money for the establishment of cemeteries. The trustees were charged with the responsibilities to construct structures and avenues; impose rules and regulations to manage and protect the cemeteries; allow ministers of the major Christian denominations free access and to have their own consecrated section of land; have the right to veto and remove inappropriate vaults and monuments; and to keep accounts and statements.</p><p>Under the provisions of the Public Health Act 1889 the Minister for Health and the Department of Public Health became responsible for the management of cemeteries and the responsibility has remained within the Health portfolio since that time.</p>"
+  },
+  "family": {
+    "heading": "Researching a family history",
+    "body": "<p>Because most of the pre-1950s records were lost, a search of the online records may find nothing even where a burial certainly took place. If that happens, the Trust may still be able to help — and there are other places to look.</p>",
+    "buttons": [
+      {
+        "label": "Search the grave records",
+        "href": "grave-search/index.html",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      },
+      {
+        "label": "Ask the Trust",
+        "href": "contact.html",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      }
+    ]
+  },
+  "sideFigure": {
+    "image": "assets/images/lone-pine-2020.jpg",
+    "width": 560,
+    "height": 747,
+    "alt": "A young Lone Pine, about two metres tall and still in its planting bag with timber boards around the base, growing in rough grass with a small dark granite plinth and bronze plaque in front of it.",
+    "caption": "Lone Pine tree, planted in 2020."
+  },
+  "helpNotice": {
+    "label": "Can you help with the record?",
+    "body": "<p>Much of what was written down about Broadford Cemetery before the 1950s no longer exists. If you hold photographs, letters, funeral notices or family knowledge about the cemetery and the people interred here, the Trust would be glad to hear from you. Please <a href=\"contact.html\">contact us</a>.</p>"
+  }
+}

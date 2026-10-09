@@ -1,0 +1,50 @@
+{
+  "draftBanner": "Proof of concept of the content management system. This is not the Trust's website.",
+  "cemeteryName": "Broadford Cemetery",
+  "trustName": "Broadford Cemetery Trust",
+  "street": "77 Piper Street",
+  "locality": "Broadford, Victoria 3658",
+  "poBox": "PO Box 434",
+  "email": "broadfordct@gmail.com",
+  "skipLinkText": "Skip to main content",
+  "menuButtonLabel": "Menu",
+  "mainNavLabel": "Main",
+  "breadcrumbLabel": "Breadcrumb",
+  "breadcrumbHome": "Home",
+  "wordmark": {
+    "name": "Broadford Cemetery",
+    "sub": "Trust · Piper Street, Broadford, Victoria"
+  },
+  "header": {
+    "enquiriesLabel": "Enquiries",
+    "postalLine": "PO Box 434, Broadford VIC 3658"
+  },
+  "footer": {
+    "statement": "A cemetery in continuous care since 1867, administered by volunteer trustees.",
+    "about": "<p>The Broadford Cemetery Trust is a not for profit Class B trust which operates under the provisions of the Cemeteries and Crematoria Act 2003 of Victoria.</p>",
+    "contactHeading": "Contact the Trust",
+    "cemeteryLabel": "Cemetery",
+    "postalLabel": "Postal address",
+    "emailLabel": "Email",
+    "pagesHeading": "Pages",
+    "draftNote": "Draft site — not yet published.",
+    "copyNotice": "Page copy and photographs are the property of the Broadford Cemetery Trust.",
+    "chronicleCredit": "<p>Grave records and plot mapping are supplied by <a href=\"https://chronicle.rip/\">Chronicle</a>.</p>"
+  },
+  "map": {
+    "heading": "Finding the cemetery",
+    "iframeTitle": "Google map showing Broadford Cemetery at 77 Piper Street, Broadford, Victoria",
+    "embedUrl": "https://www.google.com/maps?q=-37.1998363,145.0468073&hl=en&z=16&output=embed",
+    "fallbackHeading": "If the map does not load",
+    "coordinatesLabel": "Approximate coordinates",
+    "coordinates": "-37.19984, 145.04681",
+    "directionsLabel": "Get directions",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=-37.1998363,145.0468073"
+  },
+  "newWindowText": "(opens in a new window)",
+  "newWindowIcon": "↗",
+  "citedTitles": [
+    "Cemeteries and Crematoria Act 2003",
+    "Public Health Act 1889"
+  ]
+}

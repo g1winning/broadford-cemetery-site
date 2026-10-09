@@ -1,0 +1,36 @@
+{
+  "title": "Grave search — Broadford Cemetery Trust (draft)",
+  "metaDescription": "Search Broadford Cemetery's interment records and find a grave on the cemetery plot map. Records are held by Chronicle and searchable from this page.",
+  "breadcrumbLabel": "Grave search",
+  "header": {
+    "eyebrow": "Find a grave",
+    "heading": "Grave search",
+    "lead": "Search Broadford Cemetery’s interment records and see exactly where a grave sits in the grounds. Type a surname into the search control inside the map below."
+  },
+  "mapHeading": "Broadford Cemetery interactive map",
+  "mapUrl": "https://map.chronicle.rip/broadford-cemetery",
+  "mapTitle": "Broadford Cemetery interactive grave map and record search (Chronicle)",
+  "mapNote": "Map and records supplied by Chronicle. Use the search control inside the map to look up a name.",
+  "linkCard": {
+    "body": "The map also has its own website. It is easier to use in a window of its own — particularly with a screen reader, with a keyboard, or on a small phone.",
+    "buttonLabel": "Open the full Chronicle map website →"
+  },
+  "notFound": {
+    "label": "If you cannot find the name you are looking for",
+    "body": "<p>Most of the Cemetery’s records were lost in the 1950s. A grave may exist here even though we have no record of it — and an old map recovered a few years ago has since helped us identify a number of unmarked graves.</p><p>If a search finds nothing, it is worth trying these before giving up:</p><ul><li>Search the <strong>surname only</strong>, with no given name.</li><li>Try spelling variants. Nineteenth-century clerks were inconsistent, and names were often anglicised.</li><li>Check whether the burial may have been at another cemetery in the district.</li></ul><p>The Trust may still be able to help. Please <a href=\"contact.html\">contact us</a> at <a href=\"mailto:broadfordct@gmail.com\">broadfordct@gmail.com</a> with whatever you know — a name, an approximate year, a relationship — and a trustee will look into it. Enquiries like these also help us improve the records.</p>"
+  },
+  "sideNotices": [
+    {
+      "label": "Before you visit",
+      "body": "<p>Write down or photograph the section and plot reference before you leave home. Mobile coverage at the cemetery is not guaranteed.</p>"
+    },
+    {
+      "label": "About the records",
+      "body": "<p>Broadford’s interment records and plot map are held by <a href=\"https://chronicle.rip/\">Chronicle</a>, the cemetery-management system the Trust uses. Roughly 2,100 plots and 2,100 interment records are published there.</p>"
+    },
+    {
+      "label": "Researching a family history",
+      "body": "<p>Because most of the pre-1950s records were lost, a search may find nothing even where a burial certainly took place. The <a href=\"history.html\">History page</a> explains what happened to the records.</p>"
+    }
+  ]
+}

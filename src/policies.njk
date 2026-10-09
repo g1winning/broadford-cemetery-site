@@ -1,0 +1,40 @@
+---
+layout: base.njk
+dataKey: policies
+pageKey: policies
+root: ""
+permalink: policies.html
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+{{ macros.pagehead(pg.header) }}
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+
+{% for s in cms.policySections | entries -%}
+<h2>{{ s.heading }}</h2>
+{{ s.body | rich | safe }}
+{% if s.quoteText -%}
+<blockquote class="pullquote">
+<p>{{ s.quoteText }}</p>
+<cite>{{ s.quoteSource }}</cite>
+</blockquote>
+{% endif -%}
+{% if s.bodyAfter -%}
+{{ s.bodyAfter | rich | safe }}
+{% endif %}
+{% endfor -%}
+</div>
+
+<div class="stack">
+{{ macros.notice(pg.copyNotice) }}
+
+{{ macros.figure(pg.figure) }}
+</div>
+
+</div>
+</div>
+</section>

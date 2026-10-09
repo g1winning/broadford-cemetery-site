@@ -1,0 +1,34 @@
+{
+  "order": 4,
+  "heading": "Records and certificates",
+  "intro": "Administration fees for arranging an interment, issuing a certificate and searching the cemetery’s records.",
+  "tables": [
+    {
+      "caption": "Administration fees",
+      "rows": [
+        {
+          "name": "Interment administration — burial or ashes",
+          "official": "Interment administration – Burial/Ashes",
+          "amount": 275,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Issue of a certificate",
+          "official": "Certificate – Issue",
+          "amount": 65,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Search of cemetery records",
+          "official": "Search of cemetery records",
+          "amount": 65,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        }
+      ]
+    }
+  ],
+  "note": "A search of the online <a href=\"grave-search/index.html\">grave records</a> is free. The search fee above applies to a formal search of the Trust’s own registers."
+}

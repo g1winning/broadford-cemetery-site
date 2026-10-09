@@ -1,0 +1,63 @@
+---
+layout: base.njk
+dataKey: fundraiser
+pageKey: fundraiser
+root: ""
+permalink: fundraiser.html
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+{{ macros.pagehead(pg.header) }}
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+
+<h2>{{ pg.options.heading }}</h2>
+{{ pg.options.intro | rich | safe }}
+
+<div class="table-scroll">
+<table class="records">
+<caption>{{ pg.options.caption }}</caption>
+<thead>
+<tr><th scope="col">{{ pg.options.headings.paver }}</th><th scope="col">{{ pg.options.headings.wording }}</th><th scope="col">{{ pg.options.headings.size }}</th><th scope="col">{{ pg.options.headings.price }}</th></tr>
+</thead>
+<tbody>
+{% for r in pg.options.rows -%}
+<tr><th scope="row">{{ r.paver }}</th><td>{{ r.wording }}</td><td>{{ r.size }}</td><td>{{ r.price }}</td></tr>
+{% endfor -%}
+</tbody>
+</table>
+</div>
+<p class="ext-note">{{ pg.options.note | inline | rich | safe }}</p>
+
+<h2>{{ pg.order.heading }}</h2>
+{{ pg.order.intro | rich | safe }}
+{{ macros.btnrow(pg.order.buttons) }}
+{{ pg.order.outro | rich | safe }}
+
+</div>
+
+<div class="stack">
+{% for n in pg.sideNotices -%}
+{{ macros.notice(n, "memorial" if loop.first else "info") }}
+
+{% endfor -%}
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section section--band">
+<div class="container">
+<div class="grid grid--2">
+
+{% for f in pg.figures -%}
+{{ macros.figure(f) }}
+
+{% endfor -%}
+</div>
+</div>
+</section>

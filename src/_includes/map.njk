@@ -1,0 +1,32 @@
+{% import "macros.njk" as macros with context %}
+{% set m = cms.site.map %}
+<section class="section {{ mapClass }}">
+<div class="container">
+<h2>{{ m.heading }}</h2>
+<div class="grid grid--sidebar">
+
+<div class="map-frame">
+<iframe
+  title="{{ m.iframeTitle }}"
+  src="{{ m.embedUrl }}"
+  height="440"
+  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div class="card">
+<h3>{{ m.fallbackHeading }}</h3>
+<address>
+<p>{{ cms.site.cemeteryName }}<br>
+{{ cms.site.street }}<br>
+{{ cms.site.locality }}</p>
+<p>{{ m.coordinatesLabel }}<br>
+<span class="records">{{ m.coordinates }}</span></p>
+</address>
+<p class="btn-row">
+{{ macros.btn({ label: m.directionsLabel, href: m.directionsUrl, style: "btn btn--secondary" }) }}
+</p>
+</div>
+
+</div>
+</div>
+</section>

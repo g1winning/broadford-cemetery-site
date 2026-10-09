@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "key": "home",
+      "label": "Home",
+      "href": "index.html",
+      "footerLabel": "Home"
+    },
+    {
+      "key": "about",
+      "label": "About",
+      "href": "about.html",
+      "footerLabel": "About"
+    },
+    {
+      "key": "graveSearch",
+      "label": "Grave search",
+      "href": "grave-search/index.html",
+      "footerLabel": "Grave search"
+    },
+    {
+      "key": "fees",
+      "label": "Fees",
+      "href": "cemetery-fees.html",
+      "footerLabel": "Cemetery fees"
+    },
+    {
+      "key": "history",
+      "label": "History",
+      "href": "history.html",
+      "footerLabel": "History"
+    },
+    {
+      "key": "fundraiser",
+      "label": "Fundraiser",
+      "href": "fundraiser.html",
+      "footerLabel": "Fundraiser"
+    },
+    {
+      "key": "policies",
+      "label": "Policies",
+      "href": "policies.html",
+      "footerLabel": "Policies"
+    },
+    {
+      "key": "contact",
+      "label": "Contact",
+      "href": "contact.html",
+      "footerLabel": "Contact"
+    }
+  ]
+}

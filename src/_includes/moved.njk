@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="0; url={{ entry.refreshTo }}">
+<title>{{ entry.title }}</title>
+<meta name="description" content="{{ entry.metaDescription }}">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="{{ entry.canonical }}">
+<link rel="icon" href="assets/images/favicon.ico" sizes="any">
+{% include "fonts.njk" %}
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<main id="main">
+<div class="container section">
+<h1>{{ entry.heading }}</h1>
+<p class="lead">{{ entry.lead }}</p>
+<p class="btn-row"><a class="btn btn--large" href="{{ entry.buttonHref }}">{{ entry.buttonLabel }}</a></p>
+<p>{{ entry.fallback }}</p>
+</div>
+</main>
+</body>
+</html>

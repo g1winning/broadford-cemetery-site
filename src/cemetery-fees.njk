@@ -1,0 +1,108 @@
+---
+layout: base.njk
+dataKey: fees
+pageKey: fees
+root: ""
+permalink: cemetery-fees.html
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+{% set groups = cms.feeGroups | entries %}
+{{ macros.pagehead(pg.header) }}
+
+<div class="container section--tight">
+<div class="fee-banner">
+<p class="fee-effective">{{ pg.banner.effective }}</p>
+{{ pg.banner.body | rich | safe }}
+<p class="btn-row">
+{{ macros.btn(pg.banner.button) }}
+</p>
+</div>
+</div>
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+
+<h2>{{ pg.makeUp.heading }}</h2>
+{{ pg.makeUp.body | rich | safe }}
+
+{{ macros.notice(pg.makeUp.example) }}
+
+<h2>{{ pg.whoSets.heading }}</h2>
+{{ pg.whoSets.body | rich | safe }}
+
+</div>
+
+<div class="stack">
+<nav aria-label="{{ pg.contentsAriaLabel }}">
+<h2>{{ pg.contentsHeading }}</h2>
+<ul class="fee-contents">
+{% for g in groups -%}
+<li><a href="#{{ g.slug }}">{{ g.heading }}</a></li>
+{% endfor -%}
+</ul>
+</nav>
+
+{% for n in pg.sideNotices -%}
+{{ macros.notice(n, "info") }}
+
+{% endfor -%}
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section section--band">
+<div class="container">
+
+{% for g in groups -%}
+<div class="fee-group">
+<h2 id="{{ g.slug }}">{{ g.heading }}</h2>
+<p>{{ g.intro }}</p>
+
+{% for t in g.tables -%}
+<div class="table-scroll">
+<table class="fee-table">
+<caption>{{ t.caption }}</caption>
+<thead>
+<tr><th scope="col">{{ pg.tableHeadings.fee }}</th><th scope="col">{{ pg.tableHeadings.amount }}</th><th scope="col">{{ pg.tableHeadings.gazetted }}</th></tr>
+</thead>
+<tbody>
+{% for r in t.rows -%}
+<tr>
+<th scope="row"><span class="fee-name">{{ r.name }}</span><span class="fee-official">{{ r.official }}</span></th>
+{% if r.quoted -%}
+<td><span class="fee-amount fee-amount--quoted">{{ r.quoted }}</span></td>
+{%- else -%}
+<td><span class="fee-amount">{{ r.amount | money }}</span></td>
+{%- endif %}
+<td><span class="fee-gazetted">{{ r.gazetted | longDate }}</span></td>
+</tr>
+{% endfor -%}
+</tbody>
+</table>
+</div>
+
+{% endfor -%}
+{% if g.note -%}
+<p class="ext-note">{{ g.note | inline | rich | safe }}</p>
+{% endif -%}
+</div>
+
+{% endfor -%}
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="prose">
+<h2>{{ pg.source.heading }}</h2>
+{{ pg.source.body | rich | safe }}
+{{ macros.btnrow(pg.source.buttons) }}
+<p class="ext-note">{{ pg.source.note | inline | rich | safe }}</p>
+</div>
+</div>
+</section>

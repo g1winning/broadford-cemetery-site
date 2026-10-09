@@ -1,0 +1,57 @@
+---
+layout: base.njk
+dataKey: history
+pageKey: history
+root: ""
+permalink: history.html
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+{{ macros.pagehead(pg.header) }}
+
+<div class="container section--tight">
+{{ macros.figure(pg.topFigure, "figure--wide", false) }}
+</div>
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+
+<h2>{{ pg.timelineHeading }}</h2>
+
+<ol class="timeline">
+
+{% for e in cms.timeline | entries -%}
+<li>
+<span class="timeline-year">{{ e.year }}</span>
+<h3>{{ e.heading }}</h3>
+<p>{{ e.body }}</p>
+</li>
+
+{% endfor -%}
+</ol>
+
+<blockquote class="pullquote">
+<p>{{ pg.quote.text }}</p>
+<cite>{{ pg.quote.source }}</cite>
+</blockquote>
+
+<h2>{{ pg.law.heading }}</h2>
+{{ pg.law.body | rich | safe }}
+
+<h2>{{ pg.family.heading }}</h2>
+{{ pg.family.body | rich | safe }}
+{{ macros.btnrow(pg.family.buttons) }}
+
+</div>
+
+<div class="stack">
+{{ macros.figure(pg.sideFigure) }}
+
+{{ macros.notice(pg.helpNotice) }}
+</div>
+
+</div>
+</div>
+</section>

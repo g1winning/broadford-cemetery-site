@@ -1,0 +1,117 @@
+{
+  "title": "Home — Broadford Cemetery Trust (draft)",
+  "metaDescription": "Broadford Cemetery, Piper Street, Broadford, Victoria — administered by the Broadford Cemetery Trust. Find a grave, cemetery fees, history and contact details.",
+  "hero": {
+    "image": "assets/images/lawn-section-wide.jpg",
+    "width": 1100,
+    "height": 618,
+    "alt": "Open lawn burial section at Broadford Cemetery with long rows of plaques decked with flowers, a magpie on the grass, and standard roses along the boundary fence.",
+    "eyebrow": "Established 1867",
+    "heading": "Broadford Cemetery",
+    "body": "<p>The Broadford Cemetery is situated in Piper Street Broadford, Victoria and is administered by the Broadford Cemetery Trust (Volunteers) under the <a href=\"https://www.health.vic.gov.au/cemeteries-and-crematoria\">Department of Health, Victoria</a>.</p>",
+    "buttons": [
+      {
+        "label": "Find a grave",
+        "href": "grave-search/index.html",
+        "style": "btn btn--onDark btn--large",
+        "newWindow": false
+      },
+      {
+        "label": "Contact the Trust",
+        "href": "contact.html",
+        "style": "btn btn--onDark btn--large",
+        "newWindow": false
+      }
+    ]
+  },
+  "quote": "Broadford Cemetery is not just a resting place for the dead; it is a place of comfort, contemplation and conversation for our community.",
+  "help": {
+    "heading": "How can we help?",
+    "cards": [
+      {
+        "title": "Find a grave",
+        "body": "Search Broadford’s 2,100 plots and their recorded interments, and see exactly where a grave sits in the cemetery.",
+        "buttonLabel": "Search the records",
+        "href": "grave-search/index.html"
+      },
+      {
+        "title": "Cemetery fees",
+        "body": "The full gazetted fee schedule, effective 1 July 2026 — rights of interment, burial, memorial permits and certificates.",
+        "buttonLabel": "See cemetery fees",
+        "href": "cemetery-fees.html"
+      },
+      {
+        "title": "Policies and regulations",
+        "body": "What may be placed on a grave, and the general regulations that apply throughout the cemetery.",
+        "buttonLabel": "Read the policies",
+        "href": "policies.html"
+      }
+    ]
+  },
+  "care": {
+    "heading": "A cemetery in continuous care since 1867",
+    "body": "<p>In July 1867 the Government Gazette announced the first three trustees for the land which had been put aside in March of that year. The cemetery has been managed by a Trust without interruption ever since — first by representatives of the local churches, and today by volunteers drawn from across the Broadford community.</p><p>The grounds have grown steadily: a lawn section in the 1970s, the niche wall for ashes, memorial rose gardens, the Dorothy Drysdale memorial garden in 2006, and a second lawn section, babies section and further rose garden between 2019 and 2020.</p>",
+    "buttons": [
+      {
+        "label": "Read the cemetery’s history",
+        "href": "history.html",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      },
+      {
+        "label": "See the grounds",
+        "href": "about.html",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      }
+    ],
+    "figure": {
+      "image": "assets/images/prunus-blossom-fence.jpg",
+      "width": 640,
+      "height": 480,
+      "alt": "A row of pink prunus trees in full blossom along the cemetery’s white boundary fence, with white-painted iron grave surrounds behind, under a blue spring sky.",
+      "caption": "Prunus in blossom along the boundary fence."
+    }
+  },
+  "speak": {
+    "heading": "Need to speak to someone?",
+    "body": "<p>The Trust is run entirely by volunteers. Email is the fastest way to reach us, and we will reply as soon as a trustee is able.</p>",
+    "buttons": [
+      {
+        "label": "Send us a message",
+        "href": "contact.html",
+        "style": "btn",
+        "newWindow": false
+      },
+      {
+        "label": "Email broadfordct@gmail.com",
+        "href": "mailto:broadfordct@gmail.com",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      }
+    ],
+    "notice": {
+      "label": "Arranging a burial",
+      "body": "<p>If you are arranging a funeral, your funeral director will usually deal with the Trust for you. If you would rather speak to us directly, or you are enquiring about a plot, please write to us and a trustee will come back to you.</p>"
+    }
+  },
+  "support": {
+    "heading": "Support the cemetery",
+    "body": "<p>Your donation will be used to build new infrastructure with paving in the centre of our cemetery. Engraved pavers are available in single, double and triple sizes and are laid permanently in the shelter area.</p><p>A paver stays where it is laid. It becomes part of the cemetery’s own fabric — walked past, read and remembered by everyone who comes through the shelter, for as long as the cemetery stands. Many families choose one to mark a name that is already here, or simply to leave something lasting for the place.</p>",
+    "buttons": [
+      {
+        "label": "About the engraved pavers",
+        "href": "fundraiser.html",
+        "style": "btn btn--memorial",
+        "newWindow": false
+      }
+    ],
+    "figure": {
+      "image": "assets/images/shelter-and-niche-wall.jpg",
+      "width": 900,
+      "height": 675,
+      "alt": "The cemetery’s open shelter with a green roof and timber bench, standing on a brick-paved slab in front of the brick niche wall, with young standard roses in the lawn.",
+      "caption": "The shelter and niche wall. Engraved pavers are laid in the brick paving of the shelter area."
+    }
+  }
+}

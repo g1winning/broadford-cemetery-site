@@ -1,0 +1,45 @@
+---
+layout: base.njk
+dataKey: grave-search
+pageKey: graveSearch
+root: "../"
+permalink: grave-search/index.html
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+{{ macros.pagehead(pg.header) }}
+
+<section class="section--tight">
+<div class="container">
+<h2>{{ pg.mapHeading }}</h2>
+<div class="embed-frame">
+<iframe
+  src="{{ pg.mapUrl }}"
+  title="{{ pg.mapTitle }}"
+  loading="lazy"
+  allow="geolocation"
+  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+<p class="ext-note">{{ pg.mapNote | inline | rich | safe }}</p>
+
+<div class="link-card">
+<p>{{ pg.linkCard.body }}</p>
+<a class="btn btn--large" href="{{ pg.mapUrl }}" target="_blank" rel="noopener">{{ pg.linkCard.buttonLabel }}<span class="visually-hidden"> {{ cms.site.newWindowText }}</span></a>
+</div>
+</div>
+</section>
+
+<section class="section section--band">
+<div class="container">
+<div class="grid grid--2">
+{{ macros.notice(pg.notFound) }}
+
+<div class="stack">
+{% for n in pg.sideNotices -%}
+{{ macros.notice(n, "info") }}
+{% endfor -%}
+</div>
+
+</div>
+</div>
+</section>

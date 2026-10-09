@@ -1,0 +1,41 @@
+{# Small pieces of markup shared by the page templates. Wording always comes from the JSON content. #}
+
+{% macro btn(b) -%}
+{%- set ext = b.newWindow or (b.href | isExternal) -%}
+<a class="{{ b.style }}" href="{{ b.href | rel(root) }}"{% if ext %} target="_blank" rel="noopener"{% endif %}>{{ b.label }}{% if ext %}<span class="ext-icon" aria-hidden="true">{{ cms.site.newWindowIcon }}</span><span class="visually-hidden"> {{ cms.site.newWindowText }}</span>{% endif %}</a>
+{%- endmacro %}
+
+{% macro btnrow(list) -%}
+<p class="btn-row">
+{% for b in list -%}
+{{ btn(b) }}
+{% endfor -%}
+</p>
+{%- endmacro %}
+
+{% macro figure(f, cls = "", lazy = true) -%}
+<figure{% if cls %} class="{{ cls }}"{% endif %}>
+<img src="{{ f.image | rel(root) }}"{% if f.width %} width="{{ f.width }}"{% endif %}{% if f.height %} height="{{ f.height }}"{% endif %} alt="{{ f.alt }}"{% if lazy %} loading="lazy"{% endif %}>
+<figcaption>{{ f.caption | inline | rich | safe }}</figcaption>
+</figure>
+{%- endmacro %}
+
+{% macro notice(n, kind = "memorial") -%}
+<div class="notice notice--{{ kind }}">
+<span class="notice-label">{{ n.label }}</span>
+{{ n.body | rich | safe }}
+{%- if n.button %}
+<p class="btn-row">{{ btn(n.button) }}</p>
+{%- endif %}
+</div>
+{%- endmacro %}
+
+{% macro pagehead(h) -%}
+<div class="container">
+<header class="page-head">
+<p class="eyebrow">{{ h.eyebrow }}</p>
+<h1>{{ h.heading }}</h1>
+<p class="lead">{{ h.lead }}</p>
+</header>
+</div>
+{%- endmacro %}

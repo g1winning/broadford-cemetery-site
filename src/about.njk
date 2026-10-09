@@ -1,0 +1,98 @@
+---
+layout: base.njk
+dataKey: about
+pageKey: about
+root: ""
+permalink: about.html
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+{{ macros.pagehead(pg.header) }}
+
+<div class="container section--tight">
+{{ macros.figure(pg.topFigure, "figure--wide", false) }}
+</div>
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+
+{% for s in pg.sections -%}
+<h2>{{ s.heading }}</h2>
+{{ s.body | rich | safe }}
+
+{% endfor -%}
+</div>
+
+<div class="stack">
+<div class="address-block">
+<p><span class="address-label">{{ pg.addressLabels.cemetery }}</span>
+{{ cms.site.cemeteryName }}<br>
+{{ cms.site.street }}<br>
+{{ cms.site.locality }}</p>
+<p><span class="address-label">{{ pg.addressLabels.postal }}</span>
+{{ cms.site.trustName }}<br>
+{{ cms.site.poBox }}<br>
+{{ cms.site.locality }}</p>
+<p><span class="address-label">{{ pg.addressLabels.email }}</span>
+<a href="mailto:{{ cms.site.email }}">{{ cms.site.email }}</a></p>
+</div>
+
+{{ macros.notice(pg.visitNotice) }}
+</div>
+
+</div>
+</div>
+</section>
+
+{% set mapClass = "section--white" %}
+{% include "map.njk" %}
+
+<section class="section section--band">
+<div class="container">
+<h2>{{ pg.gallery.heading }}</h2>
+<p class="lead">{{ pg.gallery.lead }}</p>
+
+<ul class="gallery gallery--uniform">
+
+{% for photo in cms.groundsPhotos | entries -%}
+<li>{{ macros.figure(photo) }}</li>
+
+{% endfor -%}
+</ul>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+
+<h2 id="the-trustees">{{ pg.trustees.heading }}</h2>
+{{ pg.trustees.intro | rich | safe }}
+<ul>
+{% for t in cms.trustees | entries -%}
+<li>{{ t.line }}</li>
+{% endfor -%}
+</ul>
+
+{% for s in pg.trustees.sections -%}
+<h3>{{ s.heading }}</h3>
+{{ s.body | rich | safe }}
+{% endfor -%}
+{{ macros.btnrow(pg.trustees.buttons) }}
+
+</div>
+
+<div class="stack">
+{% for f in pg.trustees.figures -%}
+{{ macros.figure(f) }}
+
+{% endfor -%}
+</div>
+
+</div>
+</div>
+</section>

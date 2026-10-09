@@ -1,0 +1,101 @@
+---
+layout: base.njk
+dataKey: contact
+pageKey: contact
+root: ""
+permalink: contact.html
+scripts:
+  - assets/js/contact.js
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+{% set f = pg.form %}
+{{ macros.pagehead(pg.header) }}
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+
+<div class="prose">
+
+<h2>{{ pg.formHeading }}</h2>
+{{ pg.formIntro | rich | safe }}
+
+<form class="form" id="contact-form" action="{{ f.action }}" method="POST" novalidate>
+
+<input type="hidden" name="_subject" value="{{ f.subject }}">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+
+<div class="honeypot" aria-hidden="true">
+<label for="company">{{ f.honeypotLabel }}</label>
+<input type="text" id="company" name="_honey" tabindex="-1" autocomplete="off">
+</div>
+
+<div id="form-errors" class="form-status form-status--error" role="alert" tabindex="-1" hidden>
+<h3>{{ f.errorsHeading }}</h3>
+<ul id="form-errors-list"></ul>
+</div>
+
+<div class="field">
+<label for="name">{{ f.nameLabel }}</label>
+<input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+<span class="field-error" id="name-error"></span>
+</div>
+
+<div class="field">
+<label for="email">{{ f.emailLabel }}</label>
+<span class="hint" id="email-hint">{{ f.emailHint }}</span>
+<input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="email-hint email-error">
+<span class="field-error" id="email-error"></span>
+</div>
+
+<div class="field">
+<label for="phone">{{ f.phoneLabel }} <span class="optional">{{ f.phoneOptional }}</span></label>
+<input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" aria-describedby="phone-error">
+<span class="field-error" id="phone-error"></span>
+</div>
+
+<div class="field">
+<label for="message">{{ f.messageLabel }}</label>
+<span class="hint" id="message-hint">{{ f.messageHint }}</span>
+<textarea id="message" name="message" rows="7" required aria-describedby="message-hint message-error"></textarea>
+<span class="field-error" id="message-error"></span>
+</div>
+
+<p class="btn-row"><button type="submit" class="btn btn--large">{{ f.submitLabel }}</button></p>
+
+<div id="form-status" class="form-status" role="status" hidden></div>
+
+</form>
+
+</div>
+
+<div class="stack">
+
+<div class="card">
+<h2>{{ pg.card.heading }}</h2>
+<address>
+<p><strong>{{ pg.card.locationLabel }}</strong><br>
+{{ cms.site.street }}, {{ cms.site.locality }}</p>
+<p><strong>{{ pg.card.postalLabel }}</strong><br>
+{{ cms.site.poBox }}, {{ cms.site.locality }}</p>
+<p><strong>{{ pg.card.emailLabel }}</strong><br>
+<a href="mailto:{{ cms.site.email }}">{{ cms.site.email }}</a></p>
+</address>
+</div>
+
+{{ macros.figure(pg.figure) }}
+
+</div>
+
+</div>
+</div>
+</section>
+
+{% set mapClass = "section--band" %}
+{% include "map.njk" %}
+
+<div class="container section--tight">
+{{ macros.figure(pg.entranceFigure, "figure--wide") }}
+</div>

@@ -1,0 +1,2440 @@
+{
+  "version": 1,
+  "site": {
+    "name": "Broadford Cemetery Trust",
+    "description": "Proof of concept website for the Broadford Cemetery Trust.",
+    "previewUrl": "https://g1winning.github.io/broadford-cemetery-poc/",
+    "mediaFolder": "src/assets/images",
+    "mediaPublicPath": "assets/images",
+    "build": {
+      "command": "npm run build",
+      "output": "_site"
+    }
+  },
+  "collections": [
+    {
+      "key": "site",
+      "label": "Site details",
+      "description": "Name, addresses, email, footer text, the draft banner and the map. These appear on every page.",
+      "type": "singleton",
+      "file": "content/site.json",
+      "fields": [
+        {
+          "name": "draftBanner",
+          "label": "Banner at the top of every page",
+          "type": "string",
+          "hint": "The strip across the top of each page. Clear it when the site is ready to be published."
+        },
+        {
+          "name": "trustName",
+          "label": "Name of the Trust",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "cemeteryName",
+          "label": "Name of the cemetery",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "street",
+          "label": "Street address of the cemetery",
+          "type": "string",
+          "hint": "For example, 77 Piper Street."
+        },
+        {
+          "name": "locality",
+          "label": "Town, state and postcode",
+          "type": "string",
+          "hint": "Used after the street address and the PO Box."
+        },
+        {
+          "name": "poBox",
+          "label": "Postal box",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "label": "Email address",
+          "type": "string",
+          "hint": "Shown in the header, footer and contact details.",
+          "required": true
+        },
+        {
+          "name": "wordmark",
+          "label": "Name at the top left",
+          "type": "object",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "type": "string"
+            },
+            {
+              "name": "sub",
+              "label": "Line under the name",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "header",
+          "label": "Contact lines at the top right",
+          "type": "object",
+          "fields": [
+            {
+              "name": "enquiriesLabel",
+              "label": "Word before the email address",
+              "type": "string"
+            },
+            {
+              "name": "postalLine",
+              "label": "Postal address line",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "footer",
+          "label": "Footer",
+          "type": "object",
+          "fields": [
+            {
+              "name": "statement",
+              "label": "Short statement under the Trust name",
+              "type": "string"
+            },
+            {
+              "name": "about",
+              "label": "Paragraph about the Trust",
+              "type": "richtext",
+              "hint": "Titles of Acts listed under 'Titles to show in italics' are set in italics automatically."
+            },
+            {
+              "name": "contactHeading",
+              "label": "Heading over the contact details",
+              "type": "string"
+            },
+            {
+              "name": "cemeteryLabel",
+              "label": "Label for the cemetery address",
+              "type": "string"
+            },
+            {
+              "name": "postalLabel",
+              "label": "Label for the postal address",
+              "type": "string"
+            },
+            {
+              "name": "emailLabel",
+              "label": "Label for the email address",
+              "type": "string"
+            },
+            {
+              "name": "pagesHeading",
+              "label": "Heading over the list of pages",
+              "type": "string"
+            },
+            {
+              "name": "draftNote",
+              "label": "Draft note",
+              "type": "string",
+              "hint": "Shown at the bottom of every page. Clear it when the site is published."
+            },
+            {
+              "name": "copyNotice",
+              "label": "Ownership notice",
+              "type": "string"
+            },
+            {
+              "name": "chronicleCredit",
+              "label": "Credit for the grave records",
+              "type": "richtext",
+              "hint": "Links to other websites open in a new window automatically."
+            }
+          ]
+        },
+        {
+          "name": "map",
+          "label": "Map of the cemetery",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading above the map",
+              "type": "string"
+            },
+            {
+              "name": "iframeTitle",
+              "label": "Map description for screen readers",
+              "type": "string"
+            },
+            {
+              "name": "embedUrl",
+              "label": "Address of the embedded map",
+              "type": "string",
+              "hint": "The web address Google Maps gives for embedding."
+            },
+            {
+              "name": "fallbackHeading",
+              "label": "Heading of the box beside the map",
+              "type": "string"
+            },
+            {
+              "name": "coordinatesLabel",
+              "label": "Label for the coordinates",
+              "type": "string"
+            },
+            {
+              "name": "coordinates",
+              "label": "Coordinates",
+              "type": "string"
+            },
+            {
+              "name": "directionsLabel",
+              "label": "Text of the directions button",
+              "type": "string"
+            },
+            {
+              "name": "directionsUrl",
+              "label": "Address the directions button goes to",
+              "type": "string"
+            }
+          ],
+          "hint": "Shown on the About page and the Contact page."
+        },
+        {
+          "name": "citedTitles",
+          "label": "Titles to show in italics",
+          "type": "list",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string"
+            }
+          ],
+          "hint": "Names of Acts and other titles. Wherever they appear in page text they are set in italics."
+        },
+        {
+          "name": "skipLinkText",
+          "label": "Link for keyboard users to skip to the page content",
+          "type": "string",
+          "hint": "Hidden until a keyboard user tabs onto it."
+        },
+        {
+          "name": "menuButtonLabel",
+          "label": "Menu button on small screens",
+          "type": "string"
+        },
+        {
+          "name": "mainNavLabel",
+          "label": "Description of the main menu for screen readers",
+          "type": "string"
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Description of the page trail for screen readers",
+          "type": "string"
+        },
+        {
+          "name": "breadcrumbHome",
+          "label": "First word of the page trail",
+          "type": "string"
+        },
+        {
+          "name": "newWindowText",
+          "label": "Screen reader note for links that open in a new window",
+          "type": "string"
+        },
+        {
+          "name": "newWindowIcon",
+          "label": "Small symbol shown after links that open in a new window",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "key": "navigation",
+      "label": "Menu",
+      "description": "The links in the main menu and in the footer list of pages.",
+      "type": "singleton",
+      "file": "content/navigation.json",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Menu links",
+          "type": "list",
+          "fields": [
+            {
+              "name": "key",
+              "label": "Page key",
+              "type": "hidden"
+            },
+            {
+              "name": "label",
+              "label": "Menu text",
+              "type": "string",
+              "hint": "The words shown in the main menu."
+            },
+            {
+              "name": "href",
+              "label": "Goes to",
+              "type": "string",
+              "hint": "The page address, such as about.html."
+            },
+            {
+              "name": "footerLabel",
+              "label": "Footer text",
+              "type": "string",
+              "hint": "The words shown in the footer list of pages."
+            }
+          ],
+          "itemLabel": "label",
+          "hint": "Drag to change the order. The link for the page you are on is marked automatically."
+        }
+      ]
+    },
+    {
+      "key": "homePage",
+      "label": "Home page",
+      "description": "The front page of the website.",
+      "type": "singleton",
+      "file": "content/pages/home.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the home page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "hero",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Large photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text"
+            },
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "body",
+              "label": "Introduction",
+              "type": "richtext"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label"
+            }
+          ]
+        },
+        {
+          "name": "quote",
+          "label": "Quotation under the top of the page",
+          "type": "text"
+        },
+        {
+          "name": "help",
+          "label": "How can we help",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "cards",
+              "label": "Boxes",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Box heading",
+                  "type": "string"
+                },
+                {
+                  "name": "body",
+                  "label": "Text",
+                  "type": "text"
+                },
+                {
+                  "name": "buttonLabel",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Button goes to",
+                  "type": "string"
+                }
+              ],
+              "itemLabel": "title",
+              "max": 6
+            }
+          ]
+        },
+        {
+          "name": "care",
+          "label": "Care since 1867",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label"
+            },
+            {
+              "name": "figure",
+              "label": "Photograph",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "image",
+                  "label": "Photograph",
+                  "type": "image"
+                },
+                {
+                  "name": "width",
+                  "label": "Width",
+                  "type": "hidden"
+                },
+                {
+                  "name": "height",
+                  "label": "Height",
+                  "type": "hidden"
+                },
+                {
+                  "name": "alt",
+                  "label": "Photograph description for screen readers",
+                  "type": "text",
+                  "hint": "Describe what the photograph shows for people who cannot see it."
+                },
+                {
+                  "name": "caption",
+                  "label": "Caption",
+                  "type": "richtext",
+                  "hint": "The line shown under the photograph."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "speak",
+          "label": "Speak to someone",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label"
+            },
+            {
+              "name": "notice",
+              "label": "Box beside the text",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Heading of the box",
+                  "type": "string"
+                },
+                {
+                  "name": "body",
+                  "label": "Text in the box",
+                  "type": "richtext"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "support",
+          "label": "Support the cemetery",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label"
+            },
+            {
+              "name": "figure",
+              "label": "Photograph",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "image",
+                  "label": "Photograph",
+                  "type": "image"
+                },
+                {
+                  "name": "width",
+                  "label": "Width",
+                  "type": "hidden"
+                },
+                {
+                  "name": "height",
+                  "label": "Height",
+                  "type": "hidden"
+                },
+                {
+                  "name": "alt",
+                  "label": "Photograph description for screen readers",
+                  "type": "text",
+                  "hint": "Describe what the photograph shows for people who cannot see it."
+                },
+                {
+                  "name": "caption",
+                  "label": "Caption",
+                  "type": "richtext",
+                  "hint": "The line shown under the photograph."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "aboutPage",
+      "label": "About page",
+      "description": "The cemetery, its grounds and the trustees. The map is under Site details, the photographs and trustees are separate lists.",
+      "type": "singleton",
+      "file": "content/pages/about.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the About page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Name shown in the trail above the heading",
+          "type": "string",
+          "hint": "The short page name in the Home > page trail."
+        },
+        {
+          "name": "header",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "text",
+              "hint": "The larger paragraph under the heading."
+            }
+          ]
+        },
+        {
+          "name": "topFigure",
+          "label": "Large photograph at the top",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text",
+              "hint": "Describe what the photograph shows for people who cannot see it."
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "richtext",
+              "hint": "The line shown under the photograph."
+            }
+          ]
+        },
+        {
+          "name": "sections",
+          "label": "Text sections",
+          "type": "list",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            }
+          ],
+          "itemLabel": "heading"
+        },
+        {
+          "name": "addressLabels",
+          "label": "Words above the addresses",
+          "type": "object",
+          "fields": [
+            {
+              "name": "cemetery",
+              "label": "Cemetery",
+              "type": "string"
+            },
+            {
+              "name": "postal",
+              "label": "Postal address",
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "label": "Email",
+              "type": "string"
+            }
+          ],
+          "hint": "The addresses themselves are under Site details."
+        },
+        {
+          "name": "visitNotice",
+          "label": "Box about visiting",
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Heading of the box",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text in the box",
+              "type": "richtext"
+            }
+          ]
+        },
+        {
+          "name": "gallery",
+          "label": "Photograph gallery",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "string"
+            }
+          ],
+          "hint": "The photographs are in the list called Photographs of the grounds."
+        },
+        {
+          "name": "trustees",
+          "label": "Trustees",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "richtext"
+            },
+            {
+              "name": "sections",
+              "label": "Text sections",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string"
+                },
+                {
+                  "name": "body",
+                  "label": "Text",
+                  "type": "richtext"
+                }
+              ],
+              "itemLabel": "heading"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label"
+            },
+            {
+              "name": "figures",
+              "label": "Photographs",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "image",
+                  "label": "Photograph",
+                  "type": "image"
+                },
+                {
+                  "name": "width",
+                  "label": "Width",
+                  "type": "hidden"
+                },
+                {
+                  "name": "height",
+                  "label": "Height",
+                  "type": "hidden"
+                },
+                {
+                  "name": "alt",
+                  "label": "Photograph description for screen readers",
+                  "type": "text"
+                },
+                {
+                  "name": "caption",
+                  "label": "Caption",
+                  "type": "richtext"
+                }
+              ],
+              "itemLabel": "caption"
+            }
+          ],
+          "hint": "The names of the trustees are in the list called Trustees."
+        }
+      ]
+    },
+    {
+      "key": "graveSearchPage",
+      "label": "Grave search page",
+      "description": "The page with the interactive grave map.",
+      "type": "singleton",
+      "file": "content/pages/grave-search.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the grave search page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Name shown in the trail above the heading",
+          "type": "string",
+          "hint": "The short page name in the Home > page trail."
+        },
+        {
+          "name": "header",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "text",
+              "hint": "The larger paragraph under the heading."
+            }
+          ]
+        },
+        {
+          "name": "mapHeading",
+          "label": "Heading above the map",
+          "type": "string"
+        },
+        {
+          "name": "mapUrl",
+          "label": "Address of the map",
+          "type": "string",
+          "hint": "Used for the embedded map and for the button that opens it in its own window."
+        },
+        {
+          "name": "mapTitle",
+          "label": "Map description for screen readers",
+          "type": "string"
+        },
+        {
+          "name": "mapNote",
+          "label": "Note under the map",
+          "type": "richtext"
+        },
+        {
+          "name": "linkCard",
+          "label": "Box about opening the map in its own window",
+          "type": "object",
+          "fields": [
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "text"
+            },
+            {
+              "name": "buttonLabel",
+              "label": "Button text",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "notFound",
+          "label": "Box for people who cannot find a name",
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Heading of the box",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text in the box",
+              "type": "richtext"
+            }
+          ]
+        },
+        {
+          "name": "sideNotices",
+          "label": "Smaller boxes beside it",
+          "type": "list",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Heading of the box",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text in the box",
+              "type": "richtext"
+            }
+          ],
+          "itemLabel": "label"
+        }
+      ]
+    },
+    {
+      "key": "feesPage",
+      "label": "Cemetery fees page",
+      "description": "The introduction, notes and wording around the fee tables. The tables themselves are in the list called Fee tables.",
+      "type": "singleton",
+      "file": "content/pages/fees.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the fees page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Name shown in the trail above the heading",
+          "type": "string",
+          "hint": "The short page name in the Home > page trail."
+        },
+        {
+          "name": "header",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "text",
+              "hint": "The larger paragraph under the heading."
+            }
+          ]
+        },
+        {
+          "name": "banner",
+          "label": "Effective date box",
+          "type": "object",
+          "fields": [
+            {
+              "name": "effective",
+              "label": "Effective date",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            },
+            {
+              "name": "button",
+              "label": "Button",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean"
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "makeUp",
+          "label": "How a fee is made up",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext",
+              "hint": "Includes the numbered list."
+            },
+            {
+              "name": "example",
+              "label": "Worked example box",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Heading of the box",
+                  "type": "string"
+                },
+                {
+                  "name": "body",
+                  "label": "Text in the box",
+                  "type": "richtext"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "whoSets",
+          "label": "Who sets the fees",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            }
+          ]
+        },
+        {
+          "name": "contentsHeading",
+          "label": "Heading over the list of sections",
+          "type": "string"
+        },
+        {
+          "name": "contentsAriaLabel",
+          "label": "Description of the list of sections for screen readers",
+          "type": "string"
+        },
+        {
+          "name": "sideNotices",
+          "label": "Boxes beside the text",
+          "type": "list",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Heading of the box",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text in the box",
+              "type": "richtext"
+            }
+          ],
+          "itemLabel": "label"
+        },
+        {
+          "name": "tableHeadings",
+          "label": "Column headings used in every fee table",
+          "type": "object",
+          "fields": [
+            {
+              "name": "fee",
+              "label": "Fee column",
+              "type": "string"
+            },
+            {
+              "name": "amount",
+              "label": "Amount column",
+              "type": "string"
+            },
+            {
+              "name": "gazetted",
+              "label": "Date column",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "source",
+          "label": "Where the figures come from",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label"
+            },
+            {
+              "name": "note",
+              "label": "Note under the buttons",
+              "type": "richtext"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "historyPage",
+      "label": "History page",
+      "description": "The story of the cemetery. The timeline entries are in a separate list.",
+      "type": "singleton",
+      "file": "content/pages/history.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the history page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Name shown in the trail above the heading",
+          "type": "string",
+          "hint": "The short page name in the Home > page trail."
+        },
+        {
+          "name": "header",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "text",
+              "hint": "The larger paragraph under the heading."
+            }
+          ]
+        },
+        {
+          "name": "topFigure",
+          "label": "Large photograph at the top",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text",
+              "hint": "Describe what the photograph shows for people who cannot see it."
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "richtext",
+              "hint": "The line shown under the photograph."
+            }
+          ]
+        },
+        {
+          "name": "timelineHeading",
+          "label": "Heading above the timeline",
+          "type": "string"
+        },
+        {
+          "name": "quote",
+          "label": "Quotation",
+          "type": "object",
+          "fields": [
+            {
+              "name": "text",
+              "label": "Quotation",
+              "type": "text"
+            },
+            {
+              "name": "source",
+              "label": "Who said it",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "law",
+          "label": "Victorian cemetery law",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            }
+          ]
+        },
+        {
+          "name": "family",
+          "label": "Researching a family history",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label"
+            }
+          ]
+        },
+        {
+          "name": "sideFigure",
+          "label": "Photograph beside the text",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text",
+              "hint": "Describe what the photograph shows for people who cannot see it."
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "richtext",
+              "hint": "The line shown under the photograph."
+            }
+          ]
+        },
+        {
+          "name": "helpNotice",
+          "label": "Box asking for help",
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Heading of the box",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text in the box",
+              "type": "richtext"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fundraiserPage",
+      "label": "Fundraiser page",
+      "description": "The engraved pavers fundraiser.",
+      "type": "singleton",
+      "file": "content/pages/fundraiser.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the fundraiser page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Name shown in the trail above the heading",
+          "type": "string",
+          "hint": "The short page name in the Home > page trail."
+        },
+        {
+          "name": "header",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "text",
+              "hint": "The larger paragraph under the heading."
+            }
+          ]
+        },
+        {
+          "name": "options",
+          "label": "Paver sizes and prices",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "richtext"
+            },
+            {
+              "name": "caption",
+              "label": "Table title",
+              "type": "string"
+            },
+            {
+              "name": "headings",
+              "label": "Column headings",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "paver",
+                  "label": "Paver",
+                  "type": "string"
+                },
+                {
+                  "name": "wording",
+                  "label": "Wording",
+                  "type": "string"
+                },
+                {
+                  "name": "size",
+                  "label": "Size",
+                  "type": "string"
+                },
+                {
+                  "name": "price",
+                  "label": "Price",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "rows",
+              "label": "Pavers",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "paver",
+                  "label": "Paver",
+                  "type": "string"
+                },
+                {
+                  "name": "wording",
+                  "label": "Wording limit",
+                  "type": "string"
+                },
+                {
+                  "name": "size",
+                  "label": "Size",
+                  "type": "string"
+                },
+                {
+                  "name": "price",
+                  "label": "Price",
+                  "type": "string",
+                  "hint": "Include the dollar sign, for example $60."
+                }
+              ],
+              "itemLabel": "paver"
+            },
+            {
+              "name": "note",
+              "label": "Note under the table",
+              "type": "richtext"
+            }
+          ]
+        },
+        {
+          "name": "order",
+          "label": "How to order",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "intro",
+              "label": "Text before the buttons",
+              "type": "richtext"
+            },
+            {
+              "name": "buttons",
+              "label": "Buttons",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean",
+                  "hint": "Tick this for documents and other websites."
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ],
+              "itemLabel": "label",
+              "hint": "Order form and poster. Upload files to the documents folder and give their address here."
+            },
+            {
+              "name": "outro",
+              "label": "Text after the buttons",
+              "type": "richtext"
+            }
+          ]
+        },
+        {
+          "name": "sideNotices",
+          "label": "Boxes beside the text",
+          "type": "list",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Heading of the box",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text in the box",
+              "type": "richtext"
+            }
+          ],
+          "itemLabel": "label"
+        },
+        {
+          "name": "figures",
+          "label": "Photographs at the bottom",
+          "type": "list",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text"
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "richtext"
+            }
+          ],
+          "itemLabel": "caption"
+        }
+      ]
+    },
+    {
+      "key": "policiesPage",
+      "label": "Policies page",
+      "description": "The page about the Decorations Policy and General Regulations. The sections of text are in a separate list.",
+      "type": "singleton",
+      "file": "content/pages/policies.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the policies page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Name shown in the trail above the heading",
+          "type": "string",
+          "hint": "The short page name in the Home > page trail."
+        },
+        {
+          "name": "header",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "text",
+              "hint": "The larger paragraph under the heading."
+            }
+          ]
+        },
+        {
+          "name": "copyNotice",
+          "label": "Box about asking for a copy",
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Heading of the box",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text in the box",
+              "type": "richtext"
+            },
+            {
+              "name": "button",
+              "label": "Button",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string"
+                },
+                {
+                  "name": "href",
+                  "label": "Goes to",
+                  "type": "string",
+                  "hint": "A page address such as contact.html, or a full web address."
+                },
+                {
+                  "name": "newWindow",
+                  "label": "Opens in a new window",
+                  "type": "boolean"
+                },
+                {
+                  "name": "style",
+                  "label": "Button style",
+                  "type": "hidden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "figure",
+          "label": "Photograph beside the text",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text",
+              "hint": "Describe what the photograph shows for people who cannot see it."
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "richtext",
+              "hint": "The line shown under the photograph."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "contactPage",
+      "label": "Contact page",
+      "description": "The contact form, address box and photographs.",
+      "type": "singleton",
+      "file": "content/pages/contact.json",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string",
+          "hint": "The text on the browser tab and in search results for the contact page.",
+          "required": true
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text",
+          "hint": "One or two sentences. Shown under the page name in search results."
+        },
+        {
+          "name": "breadcrumbLabel",
+          "label": "Name shown in the trail above the heading",
+          "type": "string",
+          "hint": "The short page name in the Home > page trail."
+        },
+        {
+          "name": "header",
+          "label": "Top of page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the heading",
+              "type": "string"
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lead",
+              "label": "Opening sentence",
+              "type": "text",
+              "hint": "The larger paragraph under the heading."
+            }
+          ]
+        },
+        {
+          "name": "formHeading",
+          "label": "Heading over the form",
+          "type": "string"
+        },
+        {
+          "name": "formIntro",
+          "label": "Text above the form",
+          "type": "richtext"
+        },
+        {
+          "name": "form",
+          "label": "Contact form",
+          "type": "object",
+          "fields": [
+            {
+              "name": "action",
+              "label": "Address the form is sent to",
+              "type": "string",
+              "hint": "Changing this changes where enquiries go. Ask your web adviser first."
+            },
+            {
+              "name": "subject",
+              "label": "Subject line of the email the Trust receives",
+              "type": "string"
+            },
+            {
+              "name": "honeypotLabel",
+              "label": "Hidden anti-spam field label",
+              "type": "string",
+              "hint": "Not visible to visitors."
+            },
+            {
+              "name": "errorsHeading",
+              "label": "Heading of the error summary",
+              "type": "string"
+            },
+            {
+              "name": "nameLabel",
+              "label": "Name question",
+              "type": "string"
+            },
+            {
+              "name": "emailLabel",
+              "label": "Email question",
+              "type": "string"
+            },
+            {
+              "name": "emailHint",
+              "label": "Help under the email question",
+              "type": "string"
+            },
+            {
+              "name": "phoneLabel",
+              "label": "Phone question",
+              "type": "string"
+            },
+            {
+              "name": "phoneOptional",
+              "label": "Note that the phone number is optional",
+              "type": "string"
+            },
+            {
+              "name": "messageLabel",
+              "label": "Message question",
+              "type": "string"
+            },
+            {
+              "name": "messageHint",
+              "label": "Help under the message question",
+              "type": "string"
+            },
+            {
+              "name": "submitLabel",
+              "label": "Send button text",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "card",
+          "label": "Address box",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "locationLabel",
+              "label": "Label for the cemetery location",
+              "type": "string"
+            },
+            {
+              "name": "postalLabel",
+              "label": "Label for the postal address",
+              "type": "string"
+            },
+            {
+              "name": "emailLabel",
+              "label": "Label for the email address",
+              "type": "string"
+            }
+          ],
+          "hint": "The addresses themselves are under Site details."
+        },
+        {
+          "name": "figure",
+          "label": "Photograph beside the form",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text",
+              "hint": "Describe what the photograph shows for people who cannot see it."
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "richtext",
+              "hint": "The line shown under the photograph."
+            }
+          ]
+        },
+        {
+          "name": "entranceFigure",
+          "label": "Photograph at the bottom",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Photograph",
+              "type": "image"
+            },
+            {
+              "name": "width",
+              "label": "Width",
+              "type": "hidden"
+            },
+            {
+              "name": "height",
+              "label": "Height",
+              "type": "hidden"
+            },
+            {
+              "name": "alt",
+              "label": "Photograph description for screen readers",
+              "type": "text",
+              "hint": "Describe what the photograph shows for people who cannot see it."
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "richtext",
+              "hint": "The line shown under the photograph."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "trustees",
+      "label": "Trustees",
+      "description": "The people listed under The Trustees on the About page.",
+      "type": "folder",
+      "folder": "content/trustees",
+      "titleField": "line",
+      "sortField": "order",
+      "sortOrder": "asc",
+      "create": true,
+      "delete": true,
+      "fields": [
+        {
+          "name": "line",
+          "label": "Name and role",
+          "type": "string",
+          "hint": "The name, then a dash and the role if there is one.",
+          "required": true
+        },
+        {
+          "name": "order",
+          "label": "Position in the list",
+          "type": "number",
+          "hint": "Lower numbers come first.",
+          "min": 1,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "key": "groundsPhotos",
+      "label": "Photographs of the grounds",
+      "description": "The gallery on the About page.",
+      "type": "folder",
+      "folder": "content/grounds-photos",
+      "titleField": "caption",
+      "sortField": "order",
+      "sortOrder": "asc",
+      "create": true,
+      "delete": true,
+      "fields": [
+        {
+          "name": "order",
+          "label": "Position in the list",
+          "type": "number",
+          "hint": "Lower numbers come first.",
+          "min": 1,
+          "step": 1
+        },
+        {
+          "name": "image",
+          "label": "Photograph",
+          "type": "image"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "hidden"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "hidden"
+        },
+        {
+          "name": "alt",
+          "label": "Photograph description for screen readers",
+          "type": "text",
+          "hint": "Describe what the photograph shows for people who cannot see it."
+        },
+        {
+          "name": "caption",
+          "label": "Caption",
+          "type": "richtext"
+        }
+      ]
+    },
+    {
+      "key": "feeGroups",
+      "label": "Fee tables",
+      "description": "The sections of the Cemetery fees page. Each section has a heading and one or more tables.",
+      "type": "folder",
+      "folder": "content/fee-groups",
+      "titleField": "heading",
+      "sortField": "order",
+      "sortOrder": "asc",
+      "create": true,
+      "delete": true,
+      "fields": [
+        {
+          "name": "order",
+          "label": "Position in the list",
+          "type": "number",
+          "hint": "Lower numbers come first.",
+          "min": 1,
+          "step": 1
+        },
+        {
+          "name": "heading",
+          "label": "Section heading",
+          "type": "string",
+          "hint": "Also the name in the list of sections on the page.",
+          "required": true
+        },
+        {
+          "name": "intro",
+          "label": "Introduction",
+          "type": "text"
+        },
+        {
+          "name": "tables",
+          "label": "Tables",
+          "type": "list",
+          "fields": [
+            {
+              "name": "caption",
+              "label": "Table title",
+              "type": "string"
+            },
+            {
+              "name": "rows",
+              "label": "Fees",
+              "type": "list",
+              "fields": [
+                {
+                  "name": "name",
+                  "label": "Fee name",
+                  "type": "string"
+                },
+                {
+                  "name": "official",
+                  "label": "Official name in the gazetted schedule",
+                  "type": "string"
+                },
+                {
+                  "name": "amount",
+                  "label": "Amount",
+                  "type": "money",
+                  "hint": "Leave empty if the fee is quoted instead."
+                },
+                {
+                  "name": "quoted",
+                  "label": "Wording instead of an amount",
+                  "type": "string",
+                  "hint": "For fees that are quoted, such as 'Quoted at cost + 20%, contact the Trust'. Leave empty when there is an amount."
+                },
+                {
+                  "name": "gazetted",
+                  "label": "Date gazetted",
+                  "type": "date"
+                }
+              ],
+              "itemLabel": "name"
+            }
+          ],
+          "itemLabel": "caption"
+        },
+        {
+          "name": "note",
+          "label": "Note under the tables",
+          "type": "richtext"
+        }
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "History timeline",
+      "description": "The dated entries on the History page.",
+      "type": "folder",
+      "folder": "content/timeline",
+      "titleField": "heading",
+      "sortField": "order",
+      "sortOrder": "asc",
+      "create": true,
+      "delete": true,
+      "fields": [
+        {
+          "name": "order",
+          "label": "Position in the list",
+          "type": "number",
+          "hint": "Lower numbers come first.",
+          "min": 1,
+          "step": 1
+        },
+        {
+          "name": "year",
+          "label": "Date or years",
+          "type": "string",
+          "hint": "For example 1950s or 1970s to 1999."
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "body",
+          "label": "Text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "policySections",
+      "label": "Policy sections",
+      "description": "The sections of text on the Policies page.",
+      "type": "folder",
+      "folder": "content/policy-sections",
+      "titleField": "heading",
+      "sortField": "order",
+      "sortOrder": "asc",
+      "create": true,
+      "delete": true,
+      "fields": [
+        {
+          "name": "order",
+          "label": "Position in the list",
+          "type": "number",
+          "hint": "Lower numbers come first.",
+          "min": 1,
+          "step": 1
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "body",
+          "label": "Text",
+          "type": "richtext"
+        },
+        {
+          "name": "quoteText",
+          "label": "Quotation",
+          "type": "text",
+          "hint": "Optional. Shown after the text above."
+        },
+        {
+          "name": "quoteSource",
+          "label": "Who or what the quotation comes from",
+          "type": "string"
+        },
+        {
+          "name": "bodyAfter",
+          "label": "Text after the quotation",
+          "type": "richtext"
+        }
+      ]
+    },
+    {
+      "key": "movedPages",
+      "label": "Pages that have moved",
+      "description": "Old page addresses that send visitors to the About page.",
+      "type": "folder",
+      "folder": "content/moved-pages",
+      "titleField": "title",
+      "sortField": "title",
+      "sortOrder": "asc",
+      "create": false,
+      "delete": false,
+      "fields": [
+        {
+          "name": "fileName",
+          "label": "File name",
+          "type": "hidden"
+        },
+        {
+          "name": "title",
+          "label": "Browser tab title",
+          "type": "string"
+        },
+        {
+          "name": "metaDescription",
+          "label": "Search engine description",
+          "type": "text"
+        },
+        {
+          "name": "refreshTo",
+          "label": "Where visitors are sent",
+          "type": "hidden"
+        },
+        {
+          "name": "canonical",
+          "label": "Preferred address",
+          "type": "hidden"
+        },
+        {
+          "name": "heading",
+          "label": "Heading",
+          "type": "string"
+        },
+        {
+          "name": "lead",
+          "label": "Opening sentence",
+          "type": "text"
+        },
+        {
+          "name": "buttonLabel",
+          "label": "Button text",
+          "type": "string"
+        },
+        {
+          "name": "buttonHref",
+          "label": "Button goes to",
+          "type": "hidden"
+        },
+        {
+          "name": "fallback",
+          "label": "Sentence under the button",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

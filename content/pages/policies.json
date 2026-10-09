@@ -1,0 +1,27 @@
+{
+  "title": "Policies and regulations — Broadford Cemetery Trust (draft)",
+  "metaDescription": "The Broadford Cemetery Trust's Decorations Policy and General Regulations — what may be placed on a grave and the rules that apply in the cemetery.",
+  "breadcrumbLabel": "Policies and regulations",
+  "header": {
+    "eyebrow": "Rules for the cemetery",
+    "heading": "Policies and regulations",
+    "lead": "Two documents govern what may be placed on a grave and how the cemetery is used. Both are available from the Trust on request."
+  },
+  "copyNotice": {
+    "label": "Ask for a copy",
+    "body": "<p>The Decorations Policy and the General Regulations are both available from the Trust on request.</p>",
+    "button": {
+      "label": "Request the documents",
+      "href": "contact.html",
+      "style": "btn btn--memorial",
+      "newWindow": false
+    }
+  },
+  "figure": {
+    "image": "assets/images/trust-sign-side-gate.jpg",
+    "width": 900,
+    "height": 675,
+    "alt": "A green wrought-iron pedestrian gate carrying a cream Broadford Cemetery Trust sign with the Trust’s postal address and email, and a smaller sign about additions and alterations, looking down a grassed avenue towards the niche wall.",
+    "caption": "The pedestrian gate on Piper Street, with the Trust’s enquiries sign."
+  }
+}

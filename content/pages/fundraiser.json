@@ -1,0 +1,87 @@
+{
+  "title": "Engraved pavers fundraiser — Broadford Cemetery Trust (draft)",
+  "metaDescription": "Buy an engraved paver to support new paving in the centre of Broadford Cemetery. Single, double and triple pavers are available.",
+  "breadcrumbLabel": "Fundraiser",
+  "header": {
+    "eyebrow": "Support the cemetery",
+    "heading": "Engraved pavers fundraiser",
+    "lead": "Your donation will be used to build new infrastructure with paving in the centre of our cemetery."
+  },
+  "options": {
+    "heading": "Paver sizes and prices",
+    "intro": "<p>Pavers are engraved to your wording and laid permanently in the Broadford Cemetery shelter area. They stay where they are laid — part of the cemetery’s own fabric, walked past and read by everyone who comes through the shelter.</p>",
+    "caption": "Engraved paver options, wording limits, sizes and prices",
+    "headings": {
+      "paver": "Paver",
+      "wording": "Wording",
+      "size": "Size",
+      "price": "Price"
+    },
+    "rows": [
+      {
+        "paver": "Single paver",
+        "wording": "3 lines × 16 characters",
+        "size": "230 × 115 × 50 mm",
+        "price": "$60"
+      },
+      {
+        "paver": "Double paver",
+        "wording": "6 lines × 14 characters",
+        "size": "230 × 230 × 50 mm",
+        "price": "$110"
+      },
+      {
+        "paver": "Triple paver",
+        "wording": "9 lines × 14 characters",
+        "size": "230 × 345 × 50 mm",
+        "price": "$160"
+      }
+    ],
+    "note": "Prices include engraving and laying."
+  },
+  "order": {
+    "heading": "How to order",
+    "intro": "<p>Ordering is currently by printed form, completed and posted to the Trust.</p>",
+    "buttons": [
+      {
+        "label": "Name paver order form (PDF, 627 KB)",
+        "href": "assets/docs/name-paver-order-form-2024.pdf",
+        "style": "btn",
+        "newWindow": true
+      },
+      {
+        "label": "Pavers poster (PDF, 607 KB)",
+        "href": "assets/docs/pavers-poster-2020.pdf",
+        "style": "btn btn--secondary",
+        "newWindow": true
+      }
+    ],
+    "outro": "<p>For further enquiries please email <a href=\"mailto:broadfordct@gmail.com\">broadfordct@gmail.com</a>.</p>"
+  },
+  "sideNotices": [
+    {
+      "label": "What your paver pays for",
+      "body": "<p>Every paver goes towards the new paving in the centre of the cemetery — the area around the shelter and the niche wall, where families gather and where the pavers themselves are laid.</p>"
+    },
+    {
+      "label": "Choosing your wording",
+      "body": "<p>Wording is limited by the size of the paver: three lines on a single, six on a double, nine on a triple. Spaces count as characters. If you are not sure your wording will fit, send it to us with your order and we will check it before engraving.</p>"
+    }
+  ],
+  "figures": [
+    {
+      "image": "assets/images/paver-options.jpg",
+      "width": 1007,
+      "height": 551,
+      "alt": "The Trust’s fundraiser graphic: three blue panels describing the $60 individual, $110 double and $160 triple pavers, each beside a photograph of a terracotta engraved brick paver.",
+      "caption": "The single, double and triple pavers. The same sizes, wording limits and prices are set out in the table above."
+    },
+    {
+      "image": "assets/images/shelter-and-niche-wall.jpg",
+      "width": 900,
+      "height": 675,
+      "alt": "The cemetery shelter with its green roof and timber bench on red-brick paving, in front of the brick niche wall, with young standard roses in the surrounding lawn.",
+      "caption": "The shelter area, where the engraved pavers are laid."
+    }
+  ]
+}

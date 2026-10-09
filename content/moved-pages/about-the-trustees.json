@@ -1,0 +1,12 @@
+{
+  "fileName": "about-the-trustees.html",
+  "title": "This page has moved to About — Broadford Cemetery Trust",
+  "metaDescription": "About the trustees has moved. The Broadford Cemetery Trust members are now listed on the About page.",
+  "refreshTo": "about.html#the-trustees",
+  "canonical": "about.html",
+  "heading": "This page has moved",
+  "lead": "The Broadford Cemetery Trust members are now listed on the About page, below the description of the cemetery.",
+  "buttonLabel": "Go to the About page",
+  "buttonHref": "about.html#the-trustees",
+  "fallback": "If your browser does not take you there automatically, use the link above."
+}

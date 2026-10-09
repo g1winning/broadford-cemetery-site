@@ -1,0 +1,101 @@
+{%- set pg = cms.pages[dataKey] -%}
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ pg.title }}</title>
+<meta name="description" content="{{ pg.metaDescription }}">
+<link rel="icon" href="{{ root }}assets/images/favicon.ico" sizes="any">
+{% include "fonts.njk" %}
+<link rel="stylesheet" href="{{ root }}assets/css/site.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+<a class="skip-link" href="#main">{{ cms.site.skipLinkText }}</a>
+
+<div class="draft-banner" role="status">
+<div class="container"><p>{{ cms.site.draftBanner }}</p></div>
+</div>
+
+<header class="site-header">
+<div class="container header-inner">
+<a class="wordmark" href="{{ root }}index.html">
+{% include "logo.njk" %}
+<span class="wordmark-text">
+<span class="wordmark-name">{{ cms.site.wordmark.name }}</span>
+<span class="wordmark-sub">{{ cms.site.wordmark.sub }}</span>
+</span>
+</a>
+<button type="button" class="nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false">
+<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+<span data-nav-toggle-label>{{ cms.site.menuButtonLabel }}</span>
+</button>
+<div class="header-contact">
+<p>{{ cms.site.header.enquiriesLabel }} <a href="mailto:{{ cms.site.email }}">{{ cms.site.email }}</a></p>
+<p>{{ cms.site.header.postalLine }}</p>
+</div>
+</div>
+<nav class="site-nav" id="site-nav" data-nav aria-label="{{ cms.site.mainNavLabel }}">
+<div class="container">
+<ul class="nav-list">
+{% for item in cms.navigation.items -%}
+<li><a class="nav-link" href="{{ root }}{{ item.href }}"{% if item.key == pageKey %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+{% endfor -%}
+</ul>
+</div>
+</nav>
+</header>
+
+<main id="main">
+
+{% if pg.breadcrumbLabel -%}
+<nav class="breadcrumb" aria-label="{{ cms.site.breadcrumbLabel }}"><div class="container"><ol><li><a href="{{ root }}index.html">{{ cms.site.breadcrumbHome }}</a></li><li><span aria-current="page">{{ pg.breadcrumbLabel }}</span></li></ol></div></nav>
+
+{% endif -%}
+{{ content | safe }}
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+
+<div>
+<h2>{{ cms.site.trustName }}</h2>
+<p class="footer-statement">{{ cms.site.footer.statement }}</p>
+{{ cms.site.footer.about | rich | safe }}
+</div>
+
+<div>
+<h2>{{ cms.site.footer.contactHeading }}</h2>
+<address>
+<p>{{ cms.site.footer.cemeteryLabel }}<br>{{ cms.site.street }}, {{ cms.site.locality }}</p>
+<p>{{ cms.site.footer.postalLabel }}<br>{{ cms.site.poBox }}, {{ cms.site.locality }}</p>
+<p>{{ cms.site.footer.emailLabel }} <a href="mailto:{{ cms.site.email }}">{{ cms.site.email }}</a></p>
+</address>
+</div>
+
+<div>
+<h2>{{ cms.site.footer.pagesHeading }}</h2>
+<ul class="footer-list">
+{% for item in cms.navigation.items -%}
+<li><a href="{{ root }}{{ item.href }}">{{ item.footerLabel }}</a></li>
+{% endfor -%}
+</ul>
+</div>
+
+</div>
+
+<div class="footer-meta">
+<p class="footer-draft">{{ cms.site.footer.draftNote }}</p>
+<p>{{ cms.site.footer.copyNotice }}</p>
+{{ cms.site.footer.chronicleCredit | rich | safe }}
+</div>
+</div>
+</footer>
+
+<script src="{{ root }}assets/js/nav.js"></script>
+{% if scripts %}{% for s in scripts %}<script src="{{ root }}{{ s }}"></script>
+{% endfor %}{% endif -%}
+</body>
+</html>

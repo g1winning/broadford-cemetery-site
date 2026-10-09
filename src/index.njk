@@ -1,0 +1,86 @@
+---
+layout: base.njk
+dataKey: home
+pageKey: home
+root: ""
+permalink: index.html
+---
+{% import "macros.njk" as macros with context %}
+{% set pg = cms.pages[dataKey] %}
+<section class="hero">
+<div class="hero-media">
+<img src="{{ root }}{{ pg.hero.image }}" width="{{ pg.hero.width }}" height="{{ pg.hero.height }}" alt="{{ pg.hero.alt }}" fetchpriority="high">
+</div>
+<div class="hero-body">
+<div class="container">
+<p class="eyebrow">{{ pg.hero.eyebrow }}</p>
+<h1>{{ pg.hero.heading }}</h1>
+{{ pg.hero.body | rich | safe }}
+{{ macros.btnrow(pg.hero.buttons) }}
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<blockquote class="pullquote">
+<p>{{ pg.quote }}</p>
+</blockquote>
+</div>
+</section>
+
+<section class="section section--band">
+<div class="container">
+<h2>{{ pg.help.heading }}</h2>
+<div class="grid grid--3">
+
+{% for card in pg.help.cards -%}
+<div class="card task-card">
+<h3>{{ card.title }}</h3>
+<p>{{ card.body }}</p>
+<a class="btn" href="{{ card.href | rel(root) }}">{{ card.buttonLabel }}</a>
+</div>
+
+{% endfor -%}
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+<h2>{{ pg.care.heading }}</h2>
+{{ pg.care.body | rich | safe }}
+{{ macros.btnrow(pg.care.buttons) }}
+</div>
+{{ macros.figure(pg.care.figure) }}
+</div>
+</div>
+</section>
+
+<section class="section section--white">
+<div class="container">
+<h2>{{ pg.speak.heading }}</h2>
+<div class="grid grid--2">
+<div class="prose">
+{{ pg.speak.body | rich | safe }}
+{{ macros.btnrow(pg.speak.buttons) }}
+</div>
+{{ macros.notice(pg.speak.notice) }}
+</div>
+</div>
+</section>
+
+<section class="section section--band">
+<div class="container">
+<div class="grid grid--sidebar">
+<div class="prose">
+<h2>{{ pg.support.heading }}</h2>
+{{ pg.support.body | rich | safe }}
+{{ macros.btnrow(pg.support.buttons) }}
+</div>
+{{ macros.figure(pg.support.figure) }}
+</div>
+</div>
+</section>

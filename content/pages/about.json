@@ -1,0 +1,88 @@
+{
+  "title": "About — Broadford Cemetery Trust (draft)",
+  "metaDescription": "Broadford Cemetery at 77 Piper Street, Broadford, Victoria — the lawn sections, niche wall, memorial rose gardens and Dorothy Drysdale Memorial Garden, and the volunteer Trust that cares for them.",
+  "breadcrumbLabel": "About",
+  "header": {
+    "eyebrow": "The cemetery and its Trust",
+    "heading": "About Broadford Cemetery",
+    "lead": "What you will find at Broadford Cemetery today: the lawn sections, the niche wall for ashes, the memorial rose gardens, and the volunteers who care for them."
+  },
+  "topFigure": {
+    "image": "assets/images/lawn-and-monuments.jpg",
+    "width": 1100,
+    "height": 618,
+    "alt": "Lawn-section plaques massed with artificial flowers in the foreground, with a dense band of upright granite and older white marble headstones behind, backed by large gum trees.",
+    "caption": "Looking across a lawn section towards the monumental section and the older marble memorials beyond."
+  },
+  "sections": [
+    {
+      "heading": "Where the cemetery is",
+      "body": "<p>Broadford Cemetery is at 77 Piper Street, Broadford, Victoria. It is administered by the Broadford Cemetery Trust, a volunteer trust, under the <a href=\"https://www.health.vic.gov.au/cemeteries-and-crematoria\">Department of Health, Victoria</a>.</p>"
+    },
+    {
+      "heading": "The sections and gardens",
+      "body": "<p>In the 1970’s the lawn section was created, then the niche wall for ashes and the memorial rose garden in 1999. The Dorothy Drysdale Memorial Garden was built in 2006. A second lawn section was created in 2019 and in 2020 a babies section and another rose garden were developed.</p><p>Alongside these are the cemetery’s original monumental sections, where 19th-century marble and granite memorials stand within cast-iron and rope-and-post grave surrounds, and a heritage walk leads through the oldest part of the grounds.</p>"
+    },
+    {
+      "heading": "Community support",
+      "body": "<p>The local community has always been a great supporter of the cemetery, as is displayed on the sign board inside the cemetery gates which thanks the many families who made donations towards the beautifying of the cemetery. The 2005 open day held by the Trust to involve and inform the community in future projects attracted many locals and inspired them to revamp their family graves.</p>"
+    }
+  ],
+  "addressLabels": {
+    "cemetery": "Cemetery",
+    "postal": "Postal address",
+    "email": "Email"
+  },
+  "visitNotice": {
+    "label": "Planning a visit",
+    "body": "<p>There is vehicle access through the main gates on Piper Street, and a pedestrian gate alongside them. If you are looking for a particular grave, find its section and plot reference on the <a href=\"grave-search/index.html\">grave search</a> before you set out.</p>"
+  },
+  "gallery": {
+    "heading": "Photographs of the grounds",
+    "lead": "The Trust’s own photographs of Broadford Cemetery."
+  },
+  "trustees": {
+    "heading": "The Trustees",
+    "intro": "<p>Broadford Cemetery is overseen by appointed Trust members. All are volunteers.</p>",
+    "sections": [
+      {
+        "heading": "A trust since 1867",
+        "body": "<p>The Broadford Cemetery has been managed by a Trust continually since its conception in 1867; the early Trustees consisting of representatives from each of the churches. These days Trustees come from all walks of life, bringing their different skills and knowledge to the job.</p>"
+      },
+      {
+        "heading": "What the Trust is responsible for",
+        "body": "<p>The Broadford Cemetery Trust is a not for profit Class B trust which operates under the provisions of the Cemeteries and Crematoria Act 2003 of Victoria. As a Class B trust its members are appointed, they are not paid, and the cemetery’s income is applied to the cemetery itself.</p>"
+      }
+    ],
+    "buttons": [
+      {
+        "label": "Read the cemetery’s history",
+        "href": "history.html",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      },
+      {
+        "label": "Contact the Trust",
+        "href": "contact.html",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      }
+    ],
+    "figures": [
+      {
+        "image": "assets/images/trustee-service-bench.jpg",
+        "width": 900,
+        "height": 506,
+        "alt": "A light grey granite bench with armrests, engraved in gold: ‘Harley Hammond — in recognition of Harley’s service as a member of the Broadford Cemetery Trust from 1964 to 2009’.",
+        "caption": "A bench in the grounds recognising forty-five years of service by a Trust member, 1964 to 2009."
+      },
+      {
+        "image": "assets/images/trustees-power-barrow.jpg",
+        "width": 900,
+        "height": 600,
+        "alt": "Five Broadford Cemetery Trust members standing together on a concrete path in the cemetery behind an orange and grey motorised power barrow marked with a Broadford Cemetery Trust sticker.",
+        "caption": "Trust members with a motorised power barrow bought for the cemetery. Do you recognise anyone in this photograph? The Trust would love to record their names — <a href=\"contact.html\">contact us</a>."
+      }
+    ]
+  }
+}

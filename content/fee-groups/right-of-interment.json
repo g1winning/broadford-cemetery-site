@@ -1,0 +1,72 @@
+{
+  "order": 1,
+  "heading": "Right of interment",
+  "intro": "The right of interment is the right to be interred in a particular grave, garden position or niche. “At need” means the right is granted at the time of the death rather than reserved in advance.",
+  "tables": [
+    {
+      "caption": "Right of interment — bodily remains",
+      "rows": [
+        {
+          "name": "Adult grave — Lawn Section 1",
+          "official": "At Need – Adult – Lawn Section 1",
+          "amount": 1180,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Adult grave — Lawn Section 2 (new)",
+          "official": "At Need – Adult – Lawn Section 2 new",
+          "amount": 1345,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Adult grave — Monumental section",
+          "official": "At Need – Adult – Monument",
+          "amount": 1180,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Adult grave — Monument / Lawn F section",
+          "official": "At Need – Adult – Monument/Lawn F section",
+          "amount": 1560,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Child’s grave — first interment",
+          "official": "At Need – Child – First interment",
+          "amount": 390,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "caption": "Right of interment — cremated remains",
+      "rows": [
+        {
+          "name": "Double position, perpetual tenure — rose garden, niche wall and other memorials",
+          "official": "At Need – Double – Perpetual tenure – ROI for Rose Garden, Niche Wall and other",
+          "amount": 590,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "caption": "Right of interment — surrender",
+      "rows": [
+        {
+          "name": "Surrendering a right of interment — administration",
+          "official": "Surrender – Administration (DH sliding scale for maintenance is also applied to the refund) – Contact trust for further information",
+          "amount": null,
+          "quoted": "Contact the Trust — a departmental sliding scale for maintenance is also applied to the refund",
+          "gazetted": "2012-03-27"
+        }
+      ]
+    }
+  ],
+  "note": ""
+}

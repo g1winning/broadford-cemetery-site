@@ -1,0 +1,109 @@
+{
+  "order": 3,
+  "heading": "Memorials and permits",
+  "intro": "A permit is required before a headstone, plaque, base or new inscription is installed. Where the Trust supplies the memorial item itself, the item is charged at cost plus 20%.",
+  "tables": [
+    {
+      "caption": "Memorial permit fees",
+      "rows": [
+        {
+          "name": "Memorial inspection and certification",
+          "official": "Certification – Inspection",
+          "amount": 65,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Installing a new headstone on a single grave with no existing foundation",
+          "official": "Installation – New headstone and base without existing foundation – Single grave – Installing new headstone",
+          "amount": 175,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Complete memorial with granite base, single grave, no existing foundation",
+          "official": "Installation – New headstone and base without existing foundation – Single grave – Complete memorial grave granite base",
+          "amount": 270,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "External supplier affixing a bronze or granite panel to a lawn grave or lawn beam",
+          "official": "Installation – Affixing bronze and/or granite panel or other base by external supplier – On a lawn grave or lawn beam (excl. concrete rest and/or spacing block)",
+          "amount": 175,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "External supplier affixing a panel to an in-ground cremation memorial — permit for installation",
+          "official": "Installation – Affixing bronze and/or granite panel or other base by external supplier – On an inground cremation memorial (excl. concrete rest and/or spacing block) – Permit for installation",
+          "amount": 175,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Cemetery affixing an externally supplied plaque or panel — single",
+          "official": "Installation – Affixing externally supplied bronze plaque and/or granite panel or other base by cemetery – Affixing/installation/placement fee",
+          "amount": 230,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Cemetery affixing an externally supplied plaque or panel — double",
+          "official": "Installation – Affixing externally supplied bronze plaque and/or granite panel or other base by cemetery – Affixing/installation/placement fee – Double",
+          "amount": 465,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Additional inscription on an existing monument",
+          "official": "Renovation – Additional inscription – Additional wording to monument",
+          "amount": 95,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Minor renovation works — single grave",
+          "official": "Renovation – Minor – Single grave – Minor renovation works",
+          "amount": 95,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Major renovation works — single grave",
+          "official": "Renovation – Major – Single grave – Renovation major works",
+          "amount": 390,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "caption": "Memorial items supplied by the cemetery",
+      "rows": [
+        {
+          "name": "Plaque",
+          "official": "Plaque – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        },
+        {
+          "name": "Base",
+          "official": "Base – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        },
+        {
+          "name": "Vase",
+          "official": "Vase – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        }
+      ]
+    }
+  ],
+  "note": ""
+}

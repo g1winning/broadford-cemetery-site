@@ -1,0 +1,68 @@
+{
+  "title": "Cemetery fees — Broadford Cemetery Trust (draft)",
+  "metaDescription": "Broadford Cemetery's gazetted fees, effective 1 July 2026 — rights of interment, burial and interment, memorials and permits, records and certificates.",
+  "breadcrumbLabel": "Cemetery fees",
+  "header": {
+    "eyebrow": "Burials and interments",
+    "heading": "Cemetery fees",
+    "lead": "Broadford’s fees are gazetted — they are approved and published by the State of Victoria, not set by the Trust. The full schedule is set out below in plain English."
+  },
+  "banner": {
+    "effective": "Effective 1 July 2026",
+    "body": "<p>Fee amounts of $50 or more are adjusted each year in line with the Consumer Price Index and re-gazetted on <strong>1 July</strong>. The authoritative version is always the schedule published by the Department of Health, Victoria for Broadford Cemetery (reference CEM0074). If anything on this page ever disagrees with that schedule, the gazetted schedule applies.</p>",
+    "button": {
+      "label": "Broadford’s gazetted fee schedule on health.vic.gov.au",
+      "href": "https://www.health.vic.gov.au/cemeterydetailspage?id=CEM0074",
+      "style": "btn btn--onDark",
+      "newWindow": true
+    }
+  },
+  "makeUp": {
+    "heading": "How a cemetery fee is made up",
+    "body": "<p>There is no single price for a burial. A family’s total is built from separate approved fees, and two of them are quoted rather than fixed.</p><ol><li><strong>The right of interment</strong> — the right to be interred in a particular grave or memorial. This is the largest fixed amount, and it varies by section.</li><li><strong>The interment itself</strong> — preparing and opening the grave. At Broadford this is gazetted as <strong>cost plus 20%</strong>, so it is quoted at the time rather than published as a figure.</li><li><strong>Interment administration</strong> — a flat <span class=\"records\">$275.00</span> for a burial or an ashes interment.</li><li><strong>Any memorial permit</strong> — if a headstone, plaque or inscription is to be installed.</li></ol>",
+    "example": {
+      "label": "A worked example",
+      "body": "<p>A typical adult burial in Lawn Section 1 comes to the <strong>right of interment ($1,180.00)</strong>, plus the <strong>interment, quoted at cost + 20%</strong>, plus <strong>interment administration ($275.00)</strong>. A memorial permit is charged separately if a headstone or plaque follows.</p><p>Most families never assemble this themselves — a funeral director does it on their behalf. If you would like the Trust to quote the whole cost for a particular section, please <a href=\"contact.html\">ask us</a>.</p>"
+    }
+  },
+  "whoSets": {
+    "heading": "Who sets these fees",
+    "body": "<p>A cemetery trust cannot charge a fee that has not been approved. The Trust applies to the Secretary of the Department of Health, and if the fee is approved it is published in the Victoria Government Gazette and on the Department’s website. The Trust is then required to charge the approved amount. It may be waived or reduced only on the grounds of extreme hardship or other special circumstances — if that is your situation, please tell us.</p><p>Fees fund the day-to-day running of the cemetery, the repair and replacement of its buildings and equipment, and the reserves that keep the grounds cared for in perpetuity.</p>"
+  },
+  "contentsHeading": "On this page",
+  "contentsAriaLabel": "Fee schedule sections",
+  "sideNotices": [
+    {
+      "label": "Quoted fees",
+      "body": "<p>Some services are gazetted as a percentage on cost rather than as a dollar amount. They are shown here as <strong>“Quoted at cost + 20% — contact the Trust”</strong>. They are not free, and they are not missing: there is simply no fixed figure to publish. Please <a href=\"contact.html\">contact the Trust</a> for a current quotation.</p>"
+    },
+    {
+      "label": "Arranging an interment",
+      "body": "<p>Burials and ashes interments at Broadford are usually arranged by a funeral director on the family’s behalf. If you are arranging matters yourself, or want to ask about reserving a plot, please <a href=\"contact.html\">contact the Trust</a>.</p>"
+    }
+  ],
+  "tableHeadings": {
+    "fee": "Fee",
+    "amount": "Amount",
+    "gazetted": "Gazetted"
+  },
+  "source": {
+    "heading": "Where these figures come from",
+    "body": "<p>Every amount on this page is taken from Broadford Cemetery’s gazetted fee schedule as published by the Department of Health, Victoria. Nothing has been estimated. Where the gazetted schedule states a percentage on cost rather than an amount, this page says so.</p><p>The older gazettal dates against some lines are not errors. Amounts of $50 or more are re-gazetted every 1 July when the CPI adjustment is applied; the cost-plus-20% and surrender lines have no fixed amount, so their original gazettal date stands and they remain current, approved fees.</p>",
+    "buttons": [
+      {
+        "label": "Broadford Cemetery fees on the Department of Health website",
+        "href": "https://www.health.vic.gov.au/cemeterydetailspage?id=CEM0074",
+        "style": "btn",
+        "newWindow": true
+      },
+      {
+        "label": "Ask the Trust about a fee",
+        "href": "contact.html",
+        "style": "btn btn--secondary",
+        "newWindow": false
+      }
+    ],
+    "note": "These links leave the Trust’s website and open the Victorian Department of Health cemetery register in a new window."
+  }
+}

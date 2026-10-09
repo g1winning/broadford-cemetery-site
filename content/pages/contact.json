@@ -1,0 +1,46 @@
+{
+  "title": "Contact — Broadford Cemetery Trust (draft)",
+  "metaDescription": "Contact the Broadford Cemetery Trust — 77 Piper Street, Broadford Victoria. Postal address PO Box 434, Broadford Victoria 3658. Email broadfordct@gmail.com.",
+  "breadcrumbLabel": "Contact",
+  "header": {
+    "eyebrow": "Get in touch",
+    "heading": "Contact the Trust",
+    "lead": "The Broadford Cemetery Trust is run by volunteers. Email is the surest way to reach us."
+  },
+  "formHeading": "Send the Trust a message",
+  "formIntro": "<p>Use this form for enquiries about burials, records, memorials, the pavers fundraiser or the grounds. The Trust is run by volunteers, so please allow a few days for a reply.</p>",
+  "form": {
+    "action": "https://formsubmit.co/broadfordct@gmail.com",
+    "subject": "Website enquiry — Broadford Cemetery Trust",
+    "honeypotLabel": "Leave this field empty",
+    "errorsHeading": "Please check the form",
+    "nameLabel": "Your name",
+    "emailLabel": "Email address",
+    "emailHint": "So the Trust can reply to you.",
+    "phoneLabel": "Phone number",
+    "phoneOptional": "(optional)",
+    "messageLabel": "Your message",
+    "messageHint": "If you are asking about a particular grave, please include the name and any dates you know.",
+    "submitLabel": "Send message"
+  },
+  "card": {
+    "heading": "Broadford Cemetery Trust",
+    "locationLabel": "Cemetery location",
+    "postalLabel": "Postal address",
+    "emailLabel": "Email"
+  },
+  "figure": {
+    "image": "assets/images/trust-sign-side-gate.jpg",
+    "width": 900,
+    "height": 675,
+    "alt": "The Broadford Cemetery Trust enquiries sign fixed to the green iron pedestrian gate, giving the postal address PO Box 434, Broadford Vic 3658 and the email address.",
+    "caption": "The Trust’s enquiries sign at the Piper Street pedestrian gate."
+  },
+  "entranceFigure": {
+    "image": "assets/images/entrance-gates.jpg",
+    "width": 1100,
+    "height": 618,
+    "alt": "The cemetery’s main vehicle entrance on Piper Street: a pair of grey mesh gates between rendered posts, with a gravel drive leading in past headstones and large eucalypts.",
+    "caption": "The Piper Street vehicle entrance."
+  }
+}

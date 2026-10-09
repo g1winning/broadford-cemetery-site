@@ -1,0 +1,12 @@
+{
+  "fileName": "about-the-cemetery.html",
+  "title": "This page has moved to About — Broadford Cemetery Trust",
+  "metaDescription": "About the cemetery has moved. Broadford Cemetery and the Broadford Cemetery Trust are now described on a single About page.",
+  "refreshTo": "about.html",
+  "canonical": "about.html",
+  "heading": "This page has moved",
+  "lead": "Broadford Cemetery and the Broadford Cemetery Trust are now described together on a single About page.",
+  "buttonLabel": "Go to the About page",
+  "buttonHref": "about.html",
+  "fallback": "If your browser does not take you there automatically, use the link above."
+}

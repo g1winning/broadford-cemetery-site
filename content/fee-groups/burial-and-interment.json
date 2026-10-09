@@ -1,0 +1,102 @@
+{
+  "order": 2,
+  "heading": "Burial and interment",
+  "intro": "These are the fees for the interment itself. Every grave-digging service at Broadford is gazetted as cost plus 20% and is quoted at the time; the ashes interment fees are fixed amounts.",
+  "tables": [
+    {
+      "caption": "Interment of bodily remains",
+      "rows": [
+        {
+          "name": "Burial of an adult — first interment",
+          "official": "Interment of bodily remains – Adult – First interment – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        },
+        {
+          "name": "Burial of a child — first interment",
+          "official": "Interment of bodily remains – Child – First interment – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2021-02-18"
+        },
+        {
+          "name": "Re-opening a grave — with cover",
+          "official": "Re-opening grave – With cover – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        },
+        {
+          "name": "Re-opening a grave — without cover",
+          "official": "Re-opening grave – Without cover – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        },
+        {
+          "name": "Oversized grave",
+          "official": "Oversized grave – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        },
+        {
+          "name": "Vault",
+          "official": "Vault – cost + 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2022-05-26"
+        },
+        {
+          "name": "Exhumation",
+          "official": "Exhumation – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        },
+        {
+          "name": "Lift and reposition",
+          "official": "Lift and reposition – cost plus 20%",
+          "amount": null,
+          "quoted": "Quoted at cost + 20% — contact the Trust",
+          "gazetted": "2017-06-22"
+        }
+      ]
+    },
+    {
+      "caption": "Interment of cremated remains",
+      "rows": [
+        {
+          "name": "Interment of ashes in a grave",
+          "official": "Interment of cremated remains – Interment in grave",
+          "amount": 230,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Interment of ashes in the rose garden",
+          "official": "Interment of cremated remains – Interment in memorial – Interment Rose Garden",
+          "amount": 230,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Interment of ashes in the niche wall",
+          "official": "Interment of cremated remains – Interment in memorial – Niche Wall",
+          "amount": 230,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        },
+        {
+          "name": "Officer attendance at an ashes interment",
+          "official": "Interment of cremated remains – Officer attendance – Interment Ashes",
+          "amount": 55,
+          "quoted": "",
+          "gazetted": "2026-07-01"
+        }
+      ]
+    }
+  ],
+  "note": ""
+}

@@ -1,0 +1,20 @@
+{
+  "name": "broadford-cemetery-poc",
+  "version": "1.0.0",
+  "description": "Website for the Broadford Cemetery Trust, built with Eleventy from JSON content files.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}
