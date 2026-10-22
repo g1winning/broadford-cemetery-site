@@ -311,6 +311,9 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 
 .btn--onDark { background: var(--paper); color: var(--ink-strong); border-color: var(--paper); }
 .btn--onDark:hover { background: #fff; color: var(--ink-strong); border-color: #fff; }
+/* Light buttons on the dark hero and fee banner keep dark text; the white link colour there must not reach them. */
+.hero-body a.btn--onDark, .fee-banner a.btn--onDark,
+.hero-body a.btn--onDark:hover, .fee-banner a.btn--onDark:hover { color: var(--ink-strong); }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--s2); }
 
@@ -742,7 +745,7 @@ address { font-style: normal; }
 .leaflet-tooltip.grave-section-label { background: rgba(2, 6, 23, 0.72); color: #fff; border: 0; box-shadow: none; font-weight: 700; font-size: 0.95rem; padding: 0.1rem 0.45rem; }
 .leaflet-tooltip.grave-section-label::before { display: none; }
 .grave-map--far .grave-section-label { display: none; }
-.grave-plot-label { font-family: var(--font-records); font-size: 0.72rem; line-height: 1.15; color: #fff; text-shadow: 0 0 3px #000, 0 0 2px #000; white-space: nowrap; transform: translate(-50%, -50%); pointer-events: none; text-align: center; }
+.grave-plot-label { font-family: var(--font-records); font-size: 0.8125rem; line-height: 1.2; color: #fff; background: rgba(2, 6, 23, 0.78); padding: 0.1rem 0.35rem; border-radius: 3px; white-space: nowrap; transform: translate(-50%, -50%); pointer-events: none; text-align: center; }
 
 /* Plot pages */
 .plot-layout { align-items: start; }

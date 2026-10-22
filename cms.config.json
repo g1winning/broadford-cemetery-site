@@ -3,7 +3,7 @@
   "site": {
     "name": "Broadford Cemetery Trust",
     "description": "Proof of concept website for the Broadford Cemetery Trust.",
-    "previewUrl": "https://g1winning.github.io/broadford-cemetery-poc/",
+    "previewUrl": "https://g1winning.github.io/broadford-cemetery-site/",
     "mediaFolder": "src/assets/images",
     "mediaPublicPath": "assets/images",
     "build": {
