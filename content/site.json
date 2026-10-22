@@ -29,7 +29,7 @@
     "pagesHeading": "Pages",
     "draftNote": "Draft site — not yet published.",
     "copyNotice": "Page copy and photographs are the property of the Broadford Cemetery Trust.",
-    "chronicleCredit": "<p>Grave records and plot mapping are supplied by <a href=\"https://chronicle.rip/\">Chronicle</a>.</p>"
+    "recordsCredit": "<p>Grave records and the cemetery map are kept by the Broadford Cemetery Trust.</p>"
   },
   "map": {
     "heading": "Finding the cemetery",

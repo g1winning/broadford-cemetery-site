@@ -47,3 +47,15 @@ Every publish is kept. Earlier versions lists each one with its date, with who m
 Two people can work on the site at once, but one unpublished change per item is kept; if someone else has saved a draft of the same item you will see their name with the time at the top. Talk to them before publishing over it.
 
 The banner at the top of every page, which says the site is a proof of concept, is the first field under Site details. Clear it when the Trust is ready for the site to be seen.
+
+## Grave records
+
+Plots, burials, rights of interment, requests from the public and stories live under Cemetery records, the first button on the site's screen. Changes there are saved straight away, with your name in the Change log, but reach the website only when someone presses Publish to the website on the Overview page.
+
+The Map shows every plot over an aerial photo, coloured by status. Search a surname or a plot reference such as CE-5-7 and the map moves to it. Open the plot to change its details, add photos or add a person. Edit outlines, under the map, reshapes or moves a plot, or draws a new one.
+
+Requests sent from the website arrive under Requests with a reference such as R-4KX9TQ, which the sender also sees. Give a request a date and it appears on the Calendar. An approved plot purchase can become a right of interment with one button; an approved burial or placement can become a burial record the same way.
+
+Stories sent from the website wait under Stories until someone approves them. Private details never reach the website: causes of death, private notes, contacts, rights of interment, payments and requests stay in the editor.
+
+Reports and exports downloads any of the records as a spreadsheet. Downloads holding private details are recorded in the Change log.

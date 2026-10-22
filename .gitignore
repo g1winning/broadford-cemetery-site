@@ -1,2 +1,5 @@
 _site/
 node_modules/
+
+# Cemetery photos live on the cemetery-photos branch; the deploy copies them in.
+src/assets/cemetery/photos/

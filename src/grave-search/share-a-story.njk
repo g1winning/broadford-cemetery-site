@@ -1,0 +1,51 @@
+---
+layout: base.njk
+pageKey: graveSearch
+root: "../../"
+permalink: grave-search/share-a-story/index.html
+parentCrumb:
+  href: grave-search/
+  label: Grave search
+scripts:
+  - assets/js/grave-forms.js
+eleventyComputed:
+  pageMeta:
+    title: "{{ cms.pages['grave-search'].story.heading }}, {{ cms.cemetery.info.name if cms.cemetery.info else cms.site.cemeteryName }}"
+    metaDescription: "{{ cms.pages['grave-search'].story.lead }}"
+    breadcrumbLabel: "{{ cms.pages['grave-search'].story.heading }}"
+---
+{% set t = cms.pages['grave-search'].story %}
+{% set r = cms.pages['grave-search'].request %}
+<div class="container">
+<header class="page-head">
+<h1>{{ t.heading }}</h1>
+<p class="lead">{{ t.lead }}</p>
+<p class="lead" data-plot-line hidden>{{ t.aboutLine }} <strong data-about-name></strong> <span class="records" data-plot-ref></span>. <a href="" data-plot-link>{{ r.seePlot }}</a></p>
+</header>
+</div>
+<section class="section--tight">
+<div class="container">
+<div class="form-status form-status--error" id="form-errors" tabindex="-1" hidden>
+<h2 class="h3-like">{{ r.errorsHeading }}</h2>
+<ul id="form-errors-list"></ul>
+</div>
+<form class="form" data-story-form novalidate data-endpoint="{{ cms.cemetery.info.endpoints.stories if cms.cemetery.info }}" data-strings="{{ r | json }}" data-root="{{ root }}">
+<input type="hidden" name="plotRef" data-plot-input>
+<input type="hidden" name="personId" data-person-input>
+<div class="honeypot" aria-hidden="true"><label for="hp-website">Website</label><input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="field"><label for="s-title">{{ t.titleLabel }} <span class="optional">{{ r.optional }}</span></label><input type="text" id="s-title" name="title" maxlength="200" aria-describedby="s-title-error"><span class="field-error" id="s-title-error"></span></div>
+<div class="field"><label for="s-body">{{ t.bodyLabel }}</label><span class="hint" id="s-body-hint">{{ t.bodyHint }}</span><textarea id="s-body" name="body" required maxlength="5000" aria-describedby="s-body-hint s-body-error"></textarea><span class="field-error" id="s-body-error"></span></div>
+<div class="field"><label for="s-photos">{{ t.photosLabel }} <span class="optional">{{ r.optional }}</span></label><span class="hint">{{ t.photosHint }}</span><input type="file" id="s-photos" name="photos" multiple accept="image/jpeg,image/png,image/webp" aria-describedby="s-photos-error"><span class="field-error" id="s-photos-error"></span></div>
+<div class="field"><label for="s-name">{{ t.nameLabel }}</label><input type="text" id="s-name" name="authorName" required autocomplete="name" aria-describedby="s-name-error"><span class="field-error" id="s-name-error"></span></div>
+<div class="field"><label for="s-rel">{{ t.relationshipLabel }} <span class="optional">{{ r.optional }}</span></label><input type="text" id="s-rel" name="relationship" aria-describedby="s-rel-error"><span class="field-error" id="s-rel-error"></span></div>
+<div class="field"><label for="s-email">{{ t.emailLabel }}</label><span class="hint" id="s-email-hint">{{ t.emailHint }}</span><input type="email" id="s-email" name="authorEmail" required autocomplete="email" aria-describedby="s-email-hint s-email-error"><span class="field-error" id="s-email-error"></span></div>
+<p><button type="submit" class="btn btn--large btn--memorial">{{ t.submit }}</button></p>
+<noscript><p class="notice notice--gap">{{ r.noScript }} <a href="mailto:{{ cms.site.email }}">{{ cms.site.email }}</a></p></noscript>
+</form>
+<div class="form-status form-status--ok" id="form-status" tabindex="-1" hidden>
+<h2 class="h3-like">{{ t.sentHeading }}</h2>
+<p>{{ t.sentBody }}</p>
+<p><a href="" data-plot-link>{{ r.seePlot }}</a></p>
+</div>
+</div>
+</section>

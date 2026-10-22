@@ -1,4 +1,4 @@
-{%- set pg = cms.pages[dataKey] -%}
+{%- set pg = pageMeta if pageMeta else cms.pages[dataKey] -%}
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
@@ -9,6 +9,8 @@
 <link rel="icon" href="{{ root }}assets/images/favicon.ico" sizes="any">
 {% include "fonts.njk" %}
 <link rel="stylesheet" href="{{ root }}assets/css/site.css">
+{% if styles %}{% for s in styles %}<link rel="stylesheet" href="{{ root }}{{ s }}">
+{% endfor %}{% endif -%}
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
@@ -50,7 +52,7 @@
 <main id="main">
 
 {% if pg.breadcrumbLabel -%}
-<nav class="breadcrumb" aria-label="{{ cms.site.breadcrumbLabel }}"><div class="container"><ol><li><a href="{{ root }}index.html">{{ cms.site.breadcrumbHome }}</a></li><li><span aria-current="page">{{ pg.breadcrumbLabel }}</span></li></ol></div></nav>
+<nav class="breadcrumb" aria-label="{{ cms.site.breadcrumbLabel }}"><div class="container"><ol><li><a href="{{ root }}index.html">{{ cms.site.breadcrumbHome }}</a></li>{% if parentCrumb %}<li><a href="{{ root }}{{ parentCrumb.href }}">{{ parentCrumb.label }}</a></li>{% endif %}<li><span aria-current="page">{{ pg.breadcrumbLabel }}</span></li></ol></div></nav>
 
 {% endif -%}
 {{ content | safe }}
@@ -89,7 +91,7 @@
 <div class="footer-meta">
 <p class="footer-draft">{{ cms.site.footer.draftNote }}</p>
 <p>{{ cms.site.footer.copyNotice }}</p>
-{{ cms.site.footer.chronicleCredit | rich | safe }}
+{{ cms.site.footer.recordsCredit | rich | safe }}
 </div>
 </div>
 </footer>

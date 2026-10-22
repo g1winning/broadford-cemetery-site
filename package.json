@@ -16,5 +16,8 @@
   "private": true,
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
   }
 }

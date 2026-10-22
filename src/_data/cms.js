@@ -23,5 +23,9 @@ function load(dir) {
 }
 
 module.exports = function () {
-  return load(path.join(__dirname, "..", "..", "content"));
+  const cms = load(path.join(__dirname, "..", "..", "content"));
+  // Cemetery records arrive from the CMS's "Publish to website". Until the
+  // first publish the grave search pages build empty rather than failing.
+  cms.cemetery = Object.assign({ info: null, plots: [], sections: [], stories: [], forms: [] }, cms.cemetery);
+  return cms;
 };

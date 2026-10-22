@@ -1,0 +1,117 @@
+---
+layout: base.njk
+pageKey: graveSearch
+root: "../../../"
+pagination:
+  data: cms.cemetery.plots
+  size: 1
+  alias: plot
+  addAllPagesToCollections: false
+permalink: "grave-search/plot/{{ plot.slug }}/index.html"
+parentCrumb:
+  href: grave-search/
+  label: Grave search
+eleventyComputed:
+  pageMeta:
+    title: "{% if plot.people.length %}{{ plot.people | names }}, {% endif %}{{ cms.pages['grave-search'].plot.titleLabel }} {{ plot.ref }}, {{ cms.cemetery.info.name }}"
+    metaDescription: "{{ cms.pages['grave-search'].plot.titleLabel }} {{ plot.ref }} in the {{ plot.section }} section of {{ cms.cemetery.info.name }}.{% for p in plot.people %} {{ p.name }}{% if p.diedText %}, died {{ p.diedText }}{% endif %}.{% endfor %}"
+    breadcrumbLabel: "{{ cms.pages['grave-search'].plot.titleLabel }} {{ plot.ref }}"
+---
+{% import "macros.njk" as macros with context %}
+{% set gs = cms.pages['grave-search'] %}
+{% set t = gs.plot %}
+{% set cem = cms.cemetery %}
+<div class="container">
+<header class="page-head">
+<p class="eyebrow">{{ plot.section }}</p>
+<h1>{% if plot.people.length %}{{ plot.people | names }}{% else %}{{ t.titleLabel }} {{ plot.ref }}{% endif %}</h1>
+<p class="lead">{{ t.titleLabel }} <span class="records">{{ plot.ref }}</span>{% if plot.people.length == 0 %}. {{ gs.panel.emptyPlot }}{% endif %}</p>
+</header>
+</div>
+
+<section class="section--tight">
+<div class="container">
+<div class="grid grid--sidebar plot-layout">
+
+<div>
+{% if plot.people.length %}
+<h2 class="plot-h2">{{ t.peopleHeading }}</h2>
+<ul class="plot-people">
+{% for p in plot.people %}
+<li class="card plot-person" id="person-{{ p.id }}">
+<h3>{% if p.title %}{{ p.title }} {% endif %}{{ p.name }}</h3>
+<dl class="plot-facts records">
+{% if p.bornText %}<dt>{{ t.bornLabel }}</dt><dd>{{ p.bornText }}</dd>{% endif %}
+{% if p.diedText %}<dt>{{ t.diedLabel }}</dt><dd>{{ p.diedText }}</dd>{% endif %}
+{% if p.age %}<dt>{{ t.ageLabel }}</dt><dd>{{ p.age }}</dd>{% endif %}
+{% if p.interredText %}<dt>{{ t.interredLabel }}</dt><dd>{{ p.interredText }}</dd>{% endif %}
+{% if p.type and p.type != "Burial" %}<dt>{{ t.typeLabel }}</dt><dd>{{ p.type }}</dd>{% endif %}
+{% if p.serviceman %}<dt>{{ t.servicemanLabel }}</dt><dd>{{ t.servicemanYes }}</dd>{% endif %}
+</dl>
+{% if p.note %}<p>{{ p.note }}</p>{% endif %}
+{% for s in cem.stories | storiesFor(p.stories) %}
+<div class="plot-story">{{ s.html | rich | safe }}{% if s.author %}<p class="plot-story-by">{{ t.storyBy }} {{ s.author }}{% if s.relationship %}, {{ s.relationship }}{% endif %}</p>{% endif %}</div>
+{% endfor %}
+<p><a href="{{ root }}grave-search/share-a-story/?plot={{ plot.ref | encode }}&amp;person={{ p.id }}&amp;name={{ p.name | encode }}">{{ t.addStoryLink }} {{ p.name }}</a></p>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% set plotOnly = cem.stories | storiesFor(plot.stories) | byKey("person", null) %}
+{% if plotOnly.length %}
+<h2 class="plot-h2">{{ t.storiesHeading }}</h2>
+{% for s in plotOnly %}
+<div class="card plot-story">{{ s.html | rich | safe }}{% if s.author %}<p class="plot-story-by">{{ t.storyBy }} {{ s.author }}</p>{% endif %}</div>
+{% endfor %}
+{% endif %}
+
+{% if plot.inscription %}
+<h2 class="plot-h2">{{ t.inscriptionHeading }}</h2>
+<blockquote class="plot-inscription records">{{ plot.inscription | lines | safe }}</blockquote>
+{% endif %}
+
+{% if plot.photos.length %}
+<h2 class="plot-h2">{{ t.photosHeading }}</h2>
+<ul class="gallery gallery--plot">
+{% for ph in plot.photos %}
+<li><a href="{{ root }}{{ ph.src }}"><img src="{{ root }}{{ ph.thumb }}" alt="{{ ph.alt or (t.photoAlt + ' ' + plot.ref) }}" loading="lazy"></a></li>
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+
+<aside class="stack">
+<div class="card">
+<h2 class="plot-h2 plot-h2--first">{{ t.detailsHeading }}</h2>
+<dl class="plot-facts records">
+<dt>{{ gs.panel.sectionLabel }}</dt><dd>{{ plot.section }}</dd>
+{% if plot.row %}<dt>{{ gs.panel.rowLabel }}</dt><dd>{{ plot.row }}</dd>{% endif %}
+{% if plot.number %}<dt>{{ gs.panel.numberLabel }}</dt><dd>{{ plot.number }}</dd>{% endif %}
+<dt>{{ gs.panel.statusLabel }}</dt><dd><span class="grave-status grave-status--{{ plot.status | lower }}">{{ gs.statusLabels[plot.status] or plot.status }}</span></dd>
+{% if plot.type %}<dt>{{ t.plotTypeLabel }}</dt><dd>{{ plot.type }}</dd>{% endif %}
+{% for c in plot.capacity %}<dt>{{ c.kind }}{{ t.capacitySuffix }}</dt><dd>{{ c.used }} {{ t.capacityOf }} {{ c.total }}</dd>{% endfor %}
+{% if plot.price %}<dt>{{ t.priceLabel }}</dt><dd>{{ plot.price }}</dd>{% endif %}
+</dl>
+{% if plot.note %}<p>{{ plot.note }}</p>{% endif %}
+<p class="btn-row">
+<a class="btn" href="{{ root }}grave-search/?plot={{ plot.slug }}">{{ t.mapLink }}</a>
+{% if plot.centre %}<a class="btn btn--secondary" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ plot.centre[0] }},{{ plot.centre[1] }}&amp;travelmode=walking" target="_blank" rel="noopener">{{ gs.panel.directionsLabel }}<span class="visually-hidden"> {{ cms.site.newWindowText }}</span></a>{% endif %}
+</p>
+</div>
+
+{% set forms = cem.forms | formsForPlot(plot) %}
+{% if forms.length %}
+<div class="card">
+<h2 class="plot-h2 plot-h2--first">{{ gs.panel.requestsHeading }}</h2>
+<ul class="plot-requests">
+{% for f in forms %}<li><a href="{{ root }}grave-search/request/{{ f.key }}/?plot={{ plot.ref | encode }}">{{ f.title }}</a></li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+</aside>
+
+</div>
+</div>
+</section>

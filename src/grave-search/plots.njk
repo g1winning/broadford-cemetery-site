@@ -1,0 +1,42 @@
+---
+layout: base.njk
+pageKey: graveSearch
+root: "../../"
+permalink: grave-search/plots/index.html
+parentCrumb:
+  href: grave-search/
+  label: Grave search
+eleventyComputed:
+  pageMeta:
+    title: "{{ cms.pages['grave-search'].index.plotsTitle }}, {{ cms.cemetery.info.name if cms.cemetery.info else cms.site.cemeteryName }}"
+    metaDescription: "{{ cms.pages['grave-search'].index.plotsLead }}"
+    breadcrumbLabel: "{{ cms.pages['grave-search'].index.plotsTitle }}"
+---
+{% set ix = cms.pages['grave-search'].index %}
+{% set gs = cms.pages['grave-search'] %}
+{% set groups = cms.cemetery.plots | plotsBySection %}
+<div class="container">
+<header class="page-head">
+<h1>{{ ix.plotsTitle }}</h1>
+<p class="lead">{{ ix.plotsLead }}</p>
+</header>
+</div>
+<section class="section--tight">
+<div class="container">
+<nav aria-label="{{ ix.sectionsLabel }}"><ul class="letter-nav letter-nav--wide">
+{% for g in groups %}<li><a href="#section-{{ loop.index }}">{{ g.name }}</a></li>{% endfor %}
+</ul></nav>
+{% for g in groups %}
+<h2 id="section-{{ loop.index }}">{{ ix.sectionPrefix }} {{ g.name }}</h2>
+<div class="table-scroll">
+<table class="plot-table">
+<thead><tr><th scope="col">{{ gs.panel.numberLabel }}</th><th scope="col">{{ gs.panel.statusLabel }}</th><th scope="col">{{ ix.namesColumn }}</th></tr></thead>
+<tbody>
+{% for p in g.plots %}<tr><td class="records"><a href="{{ root }}grave-search/plot/{{ p.slug }}/">{{ p.ref }}</a></td><td>{{ gs.statusLabels[p.status] or p.status }}</td><td>{{ p.people | names }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endfor %}
+</div>
+</section>

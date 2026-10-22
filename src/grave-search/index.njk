@@ -4,30 +4,121 @@ dataKey: grave-search
 pageKey: graveSearch
 root: "../"
 permalink: grave-search/index.html
+styles:
+  - assets/vendor/leaflet/leaflet.css
+scripts:
+  - assets/vendor/leaflet/leaflet.js
+  - assets/js/grave-map.js
 ---
 {% import "macros.njk" as macros with context %}
 {% set pg = cms.pages[dataKey] %}
+{% set cem = cms.cemetery %}
 {{ macros.pagehead(pg.header) }}
 
 <section class="section--tight">
 <div class="container">
-<h2>{{ pg.mapHeading }}</h2>
-<div class="embed-frame">
-<iframe
-  src="{{ pg.mapUrl }}"
-  title="{{ pg.mapTitle }}"
-  loading="lazy"
-  allow="geolocation"
-  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<h2 class="visually-hidden">{{ pg.mapHeading }}</h2>
+
+{% if cem and cem.info %}
+<div class="grave-app" data-grave-app
+  data-map-data="{{ root }}grave-search/map-data.json"
+  data-root="{{ root }}"
+  data-strings="{{ { search: pg.search, map: pg.map, panel: pg.panel, statusLabels: pg.statusLabels, newWindowText: cms.site.newWindowText } | json }}">
+
+<div class="grave-search">
+<form class="grave-search-form" role="search" action="{{ root }}grave-search/people/" data-search-form>
+<div class="field">
+<label for="grave-q">{{ pg.search.label }}</label>
+<span class="hint" id="grave-q-hint">{{ pg.search.hint }}</span>
+<div class="grave-search-row">
+<input type="search" id="grave-q" name="q" autocomplete="off" aria-describedby="grave-q-hint" data-search-input>
+<button type="submit" class="btn">{{ pg.search.button }}</button>
 </div>
-<p class="ext-note">{{ pg.mapNote | inline | rich | safe }}</p>
+</div>
+
+<details class="grave-advanced" data-advanced>
+<summary>{{ pg.search.moreOptions }}</summary>
+<div class="grave-advanced-grid">
+<div class="field"><label for="grave-first">{{ pg.search.firstNameLabel }}</label><input type="text" id="grave-first" name="first" autocomplete="off"></div>
+<div class="field"><label for="grave-last">{{ pg.search.lastNameLabel }}</label><input type="text" id="grave-last" name="last" autocomplete="off"></div>
+<div class="field"><label for="grave-from">{{ pg.search.diedFromLabel }}</label><input type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" id="grave-from" name="from" autocomplete="off"></div>
+<div class="field"><label for="grave-to">{{ pg.search.diedToLabel }}</label><input type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" id="grave-to" name="to" autocomplete="off"></div>
+<div class="field"><label for="grave-section">{{ pg.search.sectionLabel }}</label>
+<select id="grave-section" name="section">
+<option value="">{{ pg.search.anySection }}</option>
+{% for g in cem.plots | plotsBySection %}<option value="{{ g.name }}">{{ g.name }}</option>
+{% endfor %}
+</select></div>
+</div>
+</details>
+<p class="grave-clear-row"><button type="button" class="btn btn--secondary" data-clear hidden>{{ pg.search.clearLabel }}</button></p>
+</form>
+
+<div class="grave-panel" data-panel hidden tabindex="-1" aria-labelledby="grave-panel-title"></div>
+
+<div class="grave-results" data-results-wrap hidden>
+<p class="grave-results-count" role="status" aria-live="polite" data-results-count></p>
+<ol class="grave-results-list" data-results></ol>
+</div>
+
+</div>
+
+<div class="grave-map-wrap">
+<div class="grave-map-tools">
+<fieldset class="grave-legend" data-legend>
+<legend>{{ pg.map.legendHeading }}</legend>
+{% for status, label in pg.statusLabels %}
+<label class="grave-legend-item"><input type="checkbox" value="{{ status }}" checked data-status-filter> <span class="grave-swatch grave-swatch--{{ status | lower }}" aria-hidden="true"></span> {{ label }} <span class="grave-legend-count">({{ cem.info.counts.byStatus[status] or 0 }})</span></label>
+{% endfor %}
+</fieldset>
+<p class="btn-row grave-map-buttons">
+<button type="button" class="btn btn--secondary" data-locate>{{ pg.map.locateLabel }}</button>
+<button type="button" class="btn btn--secondary" data-reset>{{ pg.map.resetLabel }}</button>
+</p>
+</div>
+<div class="grave-map" data-map role="region" aria-label="{{ pg.map.label }}"></div>
+<p class="ext-note" data-map-note>{{ pg.map.note }}</p>
+<p class="ext-note" data-locate-status role="status" aria-live="polite"></p>
+<noscript><div class="notice notice--info"><span class="notice-label">{{ pg.map.legendHeading }}</span><p>{{ pg.map.noScript }}</p></div></noscript>
+</div>
+
+</div>
+{% else %}
+<div class="notice notice--gap"><span class="notice-label">{{ pg.mapHeading }}</span><p>{{ pg.map.noScript }}</p></div>
+{% endif %}
 
 <div class="link-card">
-<p>{{ pg.linkCard.body }}</p>
-<a class="btn btn--large" href="{{ pg.mapUrl }}" target="_blank" rel="noopener">{{ pg.linkCard.buttonLabel }}<span class="visually-hidden"> {{ cms.site.newWindowText }}</span></a>
+<div>
+<h2 class="link-card-heading">{{ pg.browse.heading }}</h2>
+{{ pg.browse.body | rich | safe }}
+</div>
+<p class="btn-row">
+<a class="btn btn--secondary" href="{{ root }}grave-search/people/">{{ pg.browse.peopleLink }}</a>
+<a class="btn btn--secondary" href="{{ root }}grave-search/plots/">{{ pg.browse.plotsLink }}</a>
+</p>
 </div>
 </div>
 </section>
+
+{% set featured = cem.stories | byKey("featured", true) %}
+{% if not featured.length %}{% set featured = cem.stories %}{% endif %}
+{% if featured.length %}
+<section class="section section--white">
+<div class="container">
+<h2>{{ pg.storiesHeading }}</h2>
+<ul class="story-cards">
+{% for s in featured | batch(6) | first %}
+{% set sp = (cem.plots | byKey("ref", s.plot)) | first %}
+<li class="card story-card">
+{% if s.photos.length %}<img src="{{ root }}{{ s.photos[0].thumb }}" alt="{{ s.photos[0].alt }}" loading="lazy">{% endif %}
+<div class="story-card-body">{{ s.html | rich | safe }}</div>
+{% if sp %}<p><a href="{{ root }}grave-search/plot/{{ sp.slug }}/">{% if sp.people.length %}{{ sp.people[0].name }}, {% endif %}{{ pg.panel.numberLabel }} {{ sp.ref }}</a></p>{% endif %}
+</li>
+{% endfor %}
+</ul>
+</div>
+</section>
+{% endif %}
 
 <section class="section section--band">
 <div class="container">
@@ -38,6 +129,14 @@ permalink: grave-search/index.html
 {% for n in pg.sideNotices -%}
 {{ macros.notice(n, "info") }}
 {% endfor -%}
+{% set general = cem.forms | formsForPlot(null) %}
+{% if general.length %}
+<div class="notice notice--memorial">
+<span class="notice-label">{{ pg.feedbackHeading }}</span>
+{{ pg.feedbackBody | rich | safe }}
+<p class="btn-row">{% for f in general %}<a class="btn btn--memorial" href="{{ root }}grave-search/request/{{ f.key }}/">{{ f.title }}</a>{% endfor %}</p>
+</div>
+{% endif %}
 </div>
 
 </div>

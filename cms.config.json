@@ -148,7 +148,7 @@
               "type": "string"
             },
             {
-              "name": "chronicleCredit",
+              "name": "recordsCredit",
               "label": "Credit for the grave records",
               "type": "richtext",
               "hint": "Links to other websites open in a new window automatically."
@@ -931,7 +931,7 @@
     {
       "key": "graveSearchPage",
       "label": "Grave search page",
-      "description": "The page with the interactive grave map.",
+      "description": "The grave search page: wording around the search, the map and the plot pages. The records themselves are edited under Cemetery records.",
       "type": "singleton",
       "file": "content/pages/grave-search.json",
       "fields": [
@@ -980,39 +980,648 @@
         },
         {
           "name": "mapHeading",
-          "label": "Heading above the map",
+          "label": "Heading for the search and map (read by screen readers)",
           "type": "string"
         },
         {
-          "name": "mapUrl",
-          "label": "Address of the map",
-          "type": "string",
-          "hint": "Used for the embedded map and for the button that opens it in its own window."
-        },
-        {
-          "name": "mapTitle",
-          "label": "Map description for screen readers",
-          "type": "string"
-        },
-        {
-          "name": "mapNote",
-          "label": "Note under the map",
-          "type": "richtext"
-        },
-        {
-          "name": "linkCard",
-          "label": "Box about opening the map in its own window",
+          "name": "search",
+          "label": "Search box",
           "type": "object",
           "fields": [
             {
-              "name": "body",
-              "label": "Text",
+              "name": "label",
+              "label": "Label above the search box",
+              "type": "string"
+            },
+            {
+              "name": "hint",
+              "label": "Hint under the label",
+              "type": "string"
+            },
+            {
+              "name": "button",
+              "label": "Search button",
+              "type": "string"
+            },
+            {
+              "name": "moreOptions",
+              "label": "Link that opens more search options",
+              "type": "string"
+            },
+            {
+              "name": "firstNameLabel",
+              "label": "Given name label",
+              "type": "string"
+            },
+            {
+              "name": "lastNameLabel",
+              "label": "Surname label",
+              "type": "string"
+            },
+            {
+              "name": "diedFromLabel",
+              "label": "Died from label",
+              "type": "string"
+            },
+            {
+              "name": "diedToLabel",
+              "label": "Died to label",
+              "type": "string"
+            },
+            {
+              "name": "sectionLabel",
+              "label": "Section label",
+              "type": "string"
+            },
+            {
+              "name": "anySection",
+              "label": "Choice for any section",
+              "type": "string"
+            },
+            {
+              "name": "clearLabel",
+              "label": "Clear button",
+              "type": "string"
+            },
+            {
+              "name": "noResults",
+              "label": "When nothing is found",
               "type": "text"
             },
             {
-              "name": "buttonLabel",
-              "label": "Button text",
+              "name": "resultsOne",
+              "label": "When one record is found",
               "type": "string"
+            },
+            {
+              "name": "resultsMany",
+              "label": "When several are found",
+              "type": "string",
+              "hint": "{n} becomes the number."
+            },
+            {
+              "name": "tooMany",
+              "label": "When there are too many to show",
+              "type": "text",
+              "hint": "{shown} and {n} become numbers."
+            }
+          ]
+        },
+        {
+          "name": "map",
+          "label": "Map",
+          "type": "object",
+          "fields": [
+            {
+              "name": "label",
+              "label": "Map description for screen readers",
+              "type": "string"
+            },
+            {
+              "name": "note",
+              "label": "Note under the map",
+              "type": "text"
+            },
+            {
+              "name": "legendHeading",
+              "label": "Heading of the plot status choices",
+              "type": "string"
+            },
+            {
+              "name": "aerialLabel",
+              "label": "Name of the aerial photo layer",
+              "type": "string"
+            },
+            {
+              "name": "streetLabel",
+              "label": "Name of the street map layer",
+              "type": "string"
+            },
+            {
+              "name": "locateLabel",
+              "label": "Button that shows the visitor's position",
+              "type": "string"
+            },
+            {
+              "name": "locateError",
+              "label": "When the position cannot be found",
+              "type": "text"
+            },
+            {
+              "name": "resetLabel",
+              "label": "Button that shows the whole cemetery",
+              "type": "string"
+            },
+            {
+              "name": "noScript",
+              "label": "When the map cannot be shown",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "panel",
+          "label": "Box about a selected plot",
+          "type": "object",
+          "fields": [
+            {
+              "name": "sectionLabel",
+              "label": "Section",
+              "type": "string"
+            },
+            {
+              "name": "rowLabel",
+              "label": "Row",
+              "type": "string"
+            },
+            {
+              "name": "numberLabel",
+              "label": "Plot",
+              "type": "string"
+            },
+            {
+              "name": "statusLabel",
+              "label": "Status",
+              "type": "string"
+            },
+            {
+              "name": "emptyPlot",
+              "label": "When no one is recorded in the plot",
+              "type": "string"
+            },
+            {
+              "name": "detailsButton",
+              "label": "Button to the plot's own page",
+              "type": "string"
+            },
+            {
+              "name": "directionsLabel",
+              "label": "Directions link",
+              "type": "string"
+            },
+            {
+              "name": "shareLabel",
+              "label": "Copy link button",
+              "type": "string"
+            },
+            {
+              "name": "copied",
+              "label": "After the link is copied",
+              "type": "string"
+            },
+            {
+              "name": "requestsHeading",
+              "label": "Heading above the request links",
+              "type": "string"
+            },
+            {
+              "name": "closeLabel",
+              "label": "Close button",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "statusLabels",
+          "label": "Names of the plot statuses",
+          "type": "object",
+          "fields": [
+            {
+              "name": "Occupied",
+              "label": "Occupied",
+              "type": "string"
+            },
+            {
+              "name": "Reserved",
+              "label": "Reserved",
+              "type": "string"
+            },
+            {
+              "name": "Vacant",
+              "label": "Vacant",
+              "type": "string"
+            },
+            {
+              "name": "Unavailable",
+              "label": "Unavailable",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "browse",
+          "label": "Box linking to the lists of names and plots",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "label": "Text",
+              "type": "richtext"
+            },
+            {
+              "name": "peopleLink",
+              "label": "Link to every name",
+              "type": "string"
+            },
+            {
+              "name": "plotsLink",
+              "label": "Link to every plot",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "storiesHeading",
+          "label": "Heading above the stories",
+          "type": "string"
+        },
+        {
+          "name": "feedbackHeading",
+          "label": "Heading of the box inviting corrections",
+          "type": "string"
+        },
+        {
+          "name": "feedbackBody",
+          "label": "Text of the box inviting corrections",
+          "type": "richtext"
+        },
+        {
+          "name": "plot",
+          "label": "Plot pages",
+          "type": "object",
+          "fields": [
+            {
+              "name": "titleLabel",
+              "label": "Word before the plot reference",
+              "type": "string"
+            },
+            {
+              "name": "peopleHeading",
+              "label": "Heading above the people",
+              "type": "string"
+            },
+            {
+              "name": "bornLabel",
+              "label": "Born",
+              "type": "string"
+            },
+            {
+              "name": "diedLabel",
+              "label": "Died",
+              "type": "string"
+            },
+            {
+              "name": "ageLabel",
+              "label": "Age",
+              "type": "string"
+            },
+            {
+              "name": "interredLabel",
+              "label": "Date of burial",
+              "type": "string"
+            },
+            {
+              "name": "typeLabel",
+              "label": "Kind of interment",
+              "type": "string"
+            },
+            {
+              "name": "servicemanLabel",
+              "label": "Label for service",
+              "type": "string"
+            },
+            {
+              "name": "servicemanYes",
+              "label": "Text for a returned serviceman or servicewoman",
+              "type": "string"
+            },
+            {
+              "name": "storyBy",
+              "label": "Words before a story's author",
+              "type": "string"
+            },
+            {
+              "name": "addStoryLink",
+              "label": "Link inviting a story (the name follows)",
+              "type": "string"
+            },
+            {
+              "name": "storiesHeading",
+              "label": "Heading above stories about the plot",
+              "type": "string"
+            },
+            {
+              "name": "inscriptionHeading",
+              "label": "Heading above the inscription",
+              "type": "string"
+            },
+            {
+              "name": "photosHeading",
+              "label": "Heading above the photos",
+              "type": "string"
+            },
+            {
+              "name": "photoAlt",
+              "label": "Photo description when none is given",
+              "type": "string"
+            },
+            {
+              "name": "detailsHeading",
+              "label": "Heading of the plot details box",
+              "type": "string"
+            },
+            {
+              "name": "plotTypeLabel",
+              "label": "Kind of plot",
+              "type": "string"
+            },
+            {
+              "name": "capacitySuffix",
+              "label": "Words after the kind of place, e.g. \" places used\"",
+              "type": "string"
+            },
+            {
+              "name": "capacityOf",
+              "label": "Word between the numbers, e.g. \"of\"",
+              "type": "string"
+            },
+            {
+              "name": "priceLabel",
+              "label": "Price",
+              "type": "string"
+            },
+            {
+              "name": "mapLink",
+              "label": "Button to see the plot on the map",
+              "type": "string"
+            }
+          ],
+          "hint": "Words used on every plot's own page."
+        },
+        {
+          "name": "index",
+          "label": "Lists of names and plots",
+          "type": "object",
+          "fields": [
+            {
+              "name": "peopleTitle",
+              "label": "Title of the list of names",
+              "type": "string"
+            },
+            {
+              "name": "peopleLead",
+              "label": "Introduction to the list of names",
+              "type": "text"
+            },
+            {
+              "name": "lettersLabel",
+              "label": "Name of the letter links, for screen readers",
+              "type": "string"
+            },
+            {
+              "name": "plotsTitle",
+              "label": "Title of the list of plots",
+              "type": "string"
+            },
+            {
+              "name": "plotsLead",
+              "label": "Introduction to the list of plots",
+              "type": "text"
+            },
+            {
+              "name": "sectionsLabel",
+              "label": "Name of the section links, for screen readers",
+              "type": "string"
+            },
+            {
+              "name": "sectionPrefix",
+              "label": "Word before each section name",
+              "type": "string"
+            },
+            {
+              "name": "namesColumn",
+              "label": "Heading of the names column",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "request",
+          "label": "Request forms",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small line above the form's title",
+              "type": "text"
+            },
+            {
+              "name": "forPlot",
+              "label": "Words before the plot reference",
+              "type": "text"
+            },
+            {
+              "name": "seePlot",
+              "label": "Link back to the plot",
+              "type": "text"
+            },
+            {
+              "name": "optional",
+              "label": "Marker for questions that may be left blank",
+              "type": "text"
+            },
+            {
+              "name": "choose",
+              "label": "First choice in a drop-down list",
+              "type": "text"
+            },
+            {
+              "name": "fileHint",
+              "label": "Hint under a file upload",
+              "type": "text"
+            },
+            {
+              "name": "signatureHint",
+              "label": "Hint above the signature box",
+              "type": "text"
+            },
+            {
+              "name": "signatureArea",
+              "label": "Signature box description, for screen readers",
+              "type": "text"
+            },
+            {
+              "name": "signatureClear",
+              "label": "Button that clears the signature",
+              "type": "text"
+            },
+            {
+              "name": "signatureTyped",
+              "label": "Label for a typed signature",
+              "type": "text"
+            },
+            {
+              "name": "submit",
+              "label": "Send button",
+              "type": "text"
+            },
+            {
+              "name": "sending",
+              "label": "Send button while sending",
+              "type": "text"
+            },
+            {
+              "name": "errorsHeading",
+              "label": "Heading above the list of problems",
+              "type": "text"
+            },
+            {
+              "name": "sentHeading",
+              "label": "Heading after a request is sent",
+              "type": "text"
+            },
+            {
+              "name": "sentBody",
+              "label": "Text after a request is sent (the reference follows)",
+              "type": "text"
+            },
+            {
+              "name": "backToSearch",
+              "label": "Link back to grave search",
+              "type": "text"
+            },
+            {
+              "name": "noPlotLabel",
+              "label": "Heading when no plot was chosen",
+              "type": "text"
+            },
+            {
+              "name": "noPlotBody",
+              "label": "Text when no plot was chosen",
+              "type": "text"
+            },
+            {
+              "name": "noPlotButton",
+              "label": "Button when no plot was chosen",
+              "type": "text"
+            },
+            {
+              "name": "noScript",
+              "label": "Text when JavaScript is off (the email address follows)",
+              "type": "text"
+            },
+            {
+              "name": "failed",
+              "label": "When the request could not be sent",
+              "type": "text"
+            },
+            {
+              "name": "requiredMessage",
+              "label": "When a question is not answered ({label} becomes the question)",
+              "type": "text"
+            },
+            {
+              "name": "emailMessage",
+              "label": "When an email address looks wrong",
+              "type": "text"
+            },
+            {
+              "name": "fileTooBig",
+              "label": "When a file is too large",
+              "type": "text"
+            },
+            {
+              "name": "fileType",
+              "label": "When a file is the wrong kind",
+              "type": "text"
+            }
+          ],
+          "hint": "Words around every request form. The questions themselves are edited under Cemetery records, Request forms."
+        },
+        {
+          "name": "story",
+          "label": "Share a story form",
+          "type": "object",
+          "fields": [
+            {
+              "name": "heading",
+              "label": "Title",
+              "type": "text"
+            },
+            {
+              "name": "lead",
+              "label": "Introduction",
+              "type": "text"
+            },
+            {
+              "name": "aboutLine",
+              "label": "Words before the person's name",
+              "type": "text"
+            },
+            {
+              "name": "titleLabel",
+              "label": "Story title label",
+              "type": "text"
+            },
+            {
+              "name": "bodyLabel",
+              "label": "Story label",
+              "type": "text"
+            },
+            {
+              "name": "bodyHint",
+              "label": "Story hint",
+              "type": "text"
+            },
+            {
+              "name": "photosLabel",
+              "label": "Photos label",
+              "type": "text"
+            },
+            {
+              "name": "photosHint",
+              "label": "Photos hint",
+              "type": "text"
+            },
+            {
+              "name": "nameLabel",
+              "label": "Author name label",
+              "type": "text"
+            },
+            {
+              "name": "relationshipLabel",
+              "label": "Relationship label",
+              "type": "text"
+            },
+            {
+              "name": "emailLabel",
+              "label": "Email label",
+              "type": "text"
+            },
+            {
+              "name": "emailHint",
+              "label": "Email hint",
+              "type": "text"
+            },
+            {
+              "name": "submit",
+              "label": "Send button",
+              "type": "text"
+            },
+            {
+              "name": "sentHeading",
+              "label": "Heading after sending",
+              "type": "text"
+            },
+            {
+              "name": "sentBody",
+              "label": "Text after sending",
+              "type": "text"
             }
           ]
         },

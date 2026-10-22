@@ -1,0 +1,36 @@
+---
+layout: base.njk
+pageKey: graveSearch
+root: "../../"
+permalink: grave-search/people/index.html
+parentCrumb:
+  href: grave-search/
+  label: Grave search
+eleventyComputed:
+  pageMeta:
+    title: "{{ cms.pages['grave-search'].index.peopleTitle }}, {{ cms.cemetery.info.name if cms.cemetery.info else cms.site.cemeteryName }}"
+    metaDescription: "{{ cms.pages['grave-search'].index.peopleLead }}"
+    breadcrumbLabel: "{{ cms.pages['grave-search'].index.peopleTitle }}"
+---
+{% set ix = cms.pages['grave-search'].index %}
+{% set groups = cms.cemetery.plots | peopleIndex %}
+<div class="container">
+<header class="page-head">
+<h1>{{ ix.peopleTitle }}</h1>
+<p class="lead">{{ ix.peopleLead }}</p>
+</header>
+</div>
+<section class="section--tight">
+<div class="container">
+<nav aria-label="{{ ix.lettersLabel }}"><ul class="letter-nav">
+{% for g in groups %}<li><a href="#letter-{{ g.letter }}">{{ g.letter }}</a></li>{% endfor %}
+</ul></nav>
+{% for g in groups %}
+<h2 id="letter-{{ g.letter }}">{{ g.letter }}</h2>
+<ul class="name-index records">
+{% for p in g.people %}<li><a href="{{ root }}grave-search/plot/{{ p.plotSlug }}/#person-{{ p.id }}">{% if p.last %}{{ p.last }}{% if p.first or p.middle %}, {% endif %}{% endif %}{{ p.first }}{% if p.middle %} {{ p.middle }}{% endif %}</a> <span class="name-index-meta">{{ p | lifespan }}{% if p | lifespan %}, {% endif %}{{ p.plotRef }}</span></li>
+{% endfor %}
+</ul>
+{% endfor %}
+</div>
+</section>

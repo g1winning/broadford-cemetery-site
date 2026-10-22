@@ -490,11 +490,7 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
 .map-frame { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--stone); }
 .map-frame iframe { display: block; width: 100%; border: 0; }
 
-/* Full-width application embed — the Chronicle grave map */
-.embed-frame { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--stone); }
-.embed-frame iframe { display: block; width: 100%; min-height: 75vh; border: 0; }
-
-/* Prominent standalone link card, e.g. "Open the full Chronicle map website" */
+/* Prominent standalone link card, e.g. "Browse the records" on grave search */
 .link-card {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
   gap: var(--s2) var(--s3);
@@ -670,3 +666,126 @@ address { font-style: normal; }
   .btn, .card, .notice, .link-card, .address-block, .fee-banner { border: 1px solid; }
   .nav-link[aria-current="page"] { outline: 2px solid; outline-offset: -2px; }
 }
+
+/* --------------------------------------------------------------------------
+   15. Grave search: search, results, map and plot pages
+   -------------------------------------------------------------------------- */
+
+.grave-app { display: grid; gap: var(--s3); }
+.grave-app [hidden] { display: none !important; }
+@media (min-width: 60em) {
+  .grave-app { grid-template-columns: minmax(20rem, 26rem) 1fr; align-items: start; }
+}
+
+.grave-search-row { display: flex; gap: var(--s1); }
+.grave-search-row input { flex: 1; min-width: 0; }
+.grave-search-row .btn { flex: none; }
+.grave-search .field { margin-bottom: var(--s2); }
+
+.grave-advanced { margin-bottom: var(--s2); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.grave-advanced summary { cursor: pointer; padding: 0.75rem var(--s2); font-weight: 700; color: var(--link); min-height: 48px; }
+.grave-advanced[open] summary { border-bottom: 1px solid var(--border-soft); }
+.grave-advanced-grid { display: grid; gap: 0 var(--s2); padding: var(--s2); grid-template-columns: 1fr 1fr; }
+.grave-advanced-grid .field:last-child { grid-column: 1 / -1; }
+.grave-clear-row { margin: 0 0 var(--s2); }
+
+.grave-results-count { font-weight: 700; color: var(--ink-strong); margin-bottom: var(--s1); }
+.grave-results-list { list-style: none; margin: 0 0 var(--s3); padding: 0; max-height: 28rem; overflow-y: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.grave-results-list li { margin: 0; border-bottom: 1px solid var(--border-soft); }
+.grave-results-list li:last-child { border-bottom: 0; }
+.grave-result { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 0.7rem var(--s2); font: inherit; color: var(--ink); cursor: pointer; min-height: 48px; }
+.grave-result:hover { background: var(--stone); }
+.grave-result-name { display: block; font-weight: 700; color: var(--link); text-decoration: underline; text-underline-offset: 0.15em; }
+.grave-result-meta { display: block; font-size: 1rem; color: var(--slate); }
+
+.grave-panel { background: var(--surface); border: 2px solid var(--ink-strong); border-radius: var(--radius); padding: var(--s3); }
+.grave-panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s2); }
+.grave-panel h2 { margin: 0 0 var(--s1); font-size: 1.625rem; }
+.grave-panel-close { background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 0.4rem 0.8rem; font: inherit; font-size: 1rem; cursor: pointer; color: var(--ink-strong); min-height: 44px; }
+.grave-panel-close:hover { background: var(--stone); }
+.grave-panel-photo { width: 100%; max-height: 14rem; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--s2); }
+.grave-panel-meta { color: var(--slate); margin-bottom: var(--s2); }
+.grave-panel-people { list-style: none; padding: 0; margin: 0 0 var(--s3); }
+.grave-panel-people li { margin-bottom: var(--s2); }
+.grave-panel-h3 { font-size: 1.25rem; margin: var(--s3) 0 var(--s1); }
+.grave-panel-requests { margin: 0; padding-left: 1.2em; }
+.grave-linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--link); text-decoration: underline; text-underline-offset: 0.15em; cursor: pointer; }
+.grave-linkish:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
+
+.grave-status { display: inline-block; padding: 0 0.5em; border-radius: var(--radius); font-weight: 700; font-size: 1rem; border: 2px solid; }
+.grave-status--occupied    { color: #4C1D95; border-color: #7C3AED; background: #F5F3FF; }
+.grave-status--reserved    { color: #92400E; border-color: #D97706; background: #FFFBEB; }
+.grave-status--vacant      { color: #14532D; border-color: #16A34A; background: #F0FDF4; }
+.grave-status--unavailable { color: #374151; border-color: #6B7280; background: #F3F4F6; }
+
+.grave-map-wrap { min-width: 0; }
+.grave-map { height: 70vh; min-height: 420px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--stone); }
+@media (max-width: 59.99em) { .grave-map { height: 60vh; min-height: 320px; } }
+.grave-map-error { padding: var(--s3); }
+.grave-map-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--s2); margin-bottom: var(--s2); }
+.grave-map-buttons { margin: 0; }
+.grave-map-buttons .btn { min-height: 48px; }
+
+.grave-legend { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); }
+.grave-legend legend { font-weight: 700; color: var(--ink-strong); margin-bottom: var(--s1); padding: 0; }
+.grave-legend-item { display: inline-flex; align-items: center; gap: 0.4em; font-size: 1rem; min-height: 44px; cursor: pointer; }
+.grave-legend-item input { width: 1.25rem; height: 1.25rem; }
+.grave-legend-count { color: var(--slate); }
+.grave-swatch { display: inline-block; width: 1.1rem; height: 1.1rem; border: 2px solid; border-radius: 2px; }
+.grave-swatch--occupied    { background: #7C3AED; border-color: #4C1D95; }
+.grave-swatch--reserved    { background: #D97706; border-color: #92400E; }
+.grave-swatch--vacant      { background: #16A34A; border-color: #14532D; }
+.grave-swatch--unavailable { background: #6B7280; border-color: #374151; }
+
+/* Words written on the map */
+.leaflet-container { font-family: var(--font-body); font-size: 1rem; }
+.leaflet-tooltip.grave-section-label { background: rgba(2, 6, 23, 0.72); color: #fff; border: 0; box-shadow: none; font-weight: 700; font-size: 0.95rem; padding: 0.1rem 0.45rem; }
+.leaflet-tooltip.grave-section-label::before { display: none; }
+.grave-map--far .grave-section-label { display: none; }
+.grave-plot-label { font-family: var(--font-records); font-size: 0.72rem; line-height: 1.15; color: #fff; text-shadow: 0 0 3px #000, 0 0 2px #000; white-space: nowrap; transform: translate(-50%, -50%); pointer-events: none; text-align: center; }
+
+/* Plot pages */
+.plot-layout { align-items: start; }
+.plot-h2 { font-size: 1.5rem; margin-top: var(--s4); }
+.plot-h2--first { margin-top: 0; }
+.plot-people { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s3); }
+.plot-people > li { margin: 0; }
+.plot-person h3 { margin-top: 0; }
+.plot-facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem var(--s2); margin: 0 0 var(--s2); }
+.plot-facts dt { font-weight: 700; color: var(--slate); }
+.plot-facts dd { margin: 0; }
+.plot-story { border-left: 4px solid var(--memorial); padding-left: var(--s2); margin: var(--s2) 0; }
+.plot-story-by { color: var(--slate); font-size: 1rem; }
+.plot-inscription { font-size: 1.125rem; border-left: 4px solid var(--border); padding-left: var(--s2); margin: 0; }
+.plot-requests { margin: 0; padding-left: 1.2em; }
+.gallery--plot { grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
+.gallery--plot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--border); }
+
+/* Name and plot indexes */
+.letter-nav { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s1); padding: 0; margin: 0 0 var(--s3); }
+.letter-nav li { margin: 0; }
+.letter-nav a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 0.6rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); font-weight: 700; }
+.name-index { columns: 20rem; column-gap: var(--s4); list-style: none; padding: 0; }
+.name-index li { break-inside: avoid; margin-bottom: 0.35rem; }
+.name-index-meta { color: var(--slate); font-size: 1rem; }
+.plot-table td, .plot-table th { padding: 0.5rem var(--s2); text-align: left; border-bottom: 1px solid var(--border-soft); }
+
+/* Stories on the grave search page */
+.story-cards { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s3); grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }
+.story-cards > li { margin: 0; }
+.story-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--s2); }
+.link-card-heading { margin-top: 0; font-size: 1.5rem; }
+
+/* Request and story forms */
+.request-section { border: 0; padding: 0; margin: 0 0 var(--s4); }
+.request-section legend { padding: 0; }
+.request-section legend h2 { margin-top: 0; }
+.request-info { max-width: var(--measure); color: var(--slate); margin-bottom: var(--s3); }
+.field--check { display: grid; grid-template-columns: auto 1fr; gap: 0 var(--s1); align-items: start; }
+.field--check input { width: 1.5rem; height: 1.5rem; margin-top: 0.2rem; }
+.field--check .field-error { grid-column: 2; }
+.signature canvas { display: block; width: 100%; max-width: 600px; height: auto; aspect-ratio: 600 / 180; border: 2px solid var(--border); border-radius: var(--radius); background: var(--surface); touch-action: none; }
+.signature .btn-row { margin: var(--s1) 0 var(--s2); }
+.signature-typed-label { font-weight: 400 !important; }
+.h3-like { font-size: 1.25rem; margin-top: 0; }
+input[type="date"], input[type="datetime-local"], input[type="number"], input[type="file"] { min-height: 56px; padding: 0.7rem var(--s2); font: inherit; border: 2px solid var(--border); border-radius: var(--radius); background: var(--surface); max-width: 100%; }

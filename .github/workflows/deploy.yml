@@ -19,6 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Cemetery photos are kept on their own branch so this one stays small.
+      - name: Fetch cemetery photos
+        run: |
+          if git ls-remote --exit-code --heads origin cemetery-photos >/dev/null; then
+            git fetch --depth 1 origin cemetery-photos
+            mkdir -p src/assets/cemetery
+            git --work-tree=src/assets/cemetery checkout FETCH_HEAD -- photos
+          fi
       - uses: actions/setup-node@v4
         with:
           node-version: 22

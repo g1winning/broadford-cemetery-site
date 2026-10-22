@@ -1,0 +1,110 @@
+---
+layout: base.njk
+pageKey: graveSearch
+root: "../../../"
+pagination:
+  data: cms.cemetery.forms
+  size: 1
+  alias: form
+  addAllPagesToCollections: false
+permalink: "grave-search/request/{{ form.key }}/index.html"
+parentCrumb:
+  href: grave-search/
+  label: Grave search
+scripts:
+  - assets/js/grave-forms.js
+eleventyComputed:
+  pageMeta:
+    title: "{{ form.title }}, {{ cms.cemetery.info.name }}"
+    metaDescription: "{{ form.title }}. A request to the Broadford Cemetery Trust."
+    breadcrumbLabel: "{{ form.title }}"
+---
+{% set t = cms.pages['grave-search'].request %}
+{% set needsPlot = form.plotStatuses.length or form.forSaleOnly %}
+<div class="container">
+<header class="page-head">
+<p class="eyebrow">{{ t.eyebrow }}</p>
+<h1>{{ form.title }}</h1>
+<p class="lead" data-plot-line hidden>{{ t.forPlot }} <strong class="records" data-plot-ref></strong>. <a href="" data-plot-link>{{ t.seePlot }}</a></p>
+</header>
+</div>
+<section class="section--tight">
+<div class="container">
+{% if form.intro %}<div class="prose">{{ form.intro | rich | safe }}</div>{% endif %}
+
+{% if needsPlot %}
+<div class="notice notice--gap" data-no-plot hidden>
+<span class="notice-label">{{ t.noPlotLabel }}</span>
+<p>{{ t.noPlotBody }}</p>
+<p class="btn-row"><a class="btn" href="{{ root }}grave-search/">{{ t.noPlotButton }}</a></p>
+</div>
+{% endif %}
+
+<div class="form-status form-status--error" id="form-errors" tabindex="-1" hidden>
+<h2 class="h3-like">{{ t.errorsHeading }}</h2>
+<ul id="form-errors-list"></ul>
+</div>
+
+<form class="form request-form" data-request-form novalidate
+  data-endpoint="{{ cms.cemetery.info.endpoints.requests }}" data-form-key="{{ form.key }}" data-needs-plot="{{ 'yes' if needsPlot else 'no' }}"
+  data-strings="{{ t | json }}" data-root="{{ root }}">
+<input type="hidden" name="formKey" value="{{ form.key }}">
+<input type="hidden" name="plotRef" value="" data-plot-input>
+<div class="honeypot" aria-hidden="true"><label for="hp-website">Website</label><input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off"></div>
+{% for s in form.sections %}
+<fieldset class="request-section">
+<legend><h2>{{ s.title }}</h2></legend>
+{% if s.introHtml %}{{ s.introHtml | rich | safe }}{% endif %}
+{% for f in s.fields %}
+{% set fid = "f-" + (f.name | replace(".", "-")) %}
+{% if f.type == "info" %}
+<div class="request-info">{% if f.label %}<p><strong>{{ f.label }}</strong></p>{% endif %}{{ f.html | rich | safe }}</div>
+{% elif f.type == "checkbox" %}
+<div class="field field--check">
+<input type="checkbox" id="{{ fid }}" name="{{ f.name }}" value="yes"{% if f.required %} required{% endif %} aria-describedby="{{ fid }}-error">
+<label for="{{ fid }}">{{ f.label }}{% if not f.required %} <span class="optional">{{ t.optional }}</span>{% endif %}</label>
+<span class="field-error" id="{{ fid }}-error"></span>
+</div>
+{% else %}
+<div class="field">
+<label for="{{ fid }}">{{ f.label }}{% if not f.required %} <span class="optional">{{ t.optional }}</span>{% endif %}</label>
+{% if f.hint %}<span class="hint" id="{{ fid }}-hint">{{ f.hint }}</span>{% endif %}
+{% if f.type == "textarea" %}
+<textarea id="{{ fid }}" name="{{ f.name }}" maxlength="5000"{% if f.required %} required{% endif %} aria-describedby="{% if f.hint %}{{ fid }}-hint {% endif %}{{ fid }}-error"></textarea>
+{% elif f.type == "select" %}
+<select id="{{ fid }}" name="{{ f.name }}"{% if f.required %} required{% endif %} aria-describedby="{% if f.hint %}{{ fid }}-hint {% endif %}{{ fid }}-error">
+<option value="">{{ t.choose }}</option>
+{% for o in f.options %}<option>{{ o }}</option>{% endfor %}
+</select>
+{% elif f.type == "file" %}
+<span class="hint">{{ t.fileHint }}</span>
+<input type="file" id="{{ fid }}" name="{{ f.name }}" accept="image/jpeg,image/png,image/webp,application/pdf"{% if f.required %} required{% endif %} aria-describedby="{{ fid }}-error">
+{% elif f.type == "signature" %}
+<span class="hint">{{ t.signatureHint }}</span>
+<div class="signature" data-signature data-name="{{ f.name }}">
+<canvas width="600" height="180" aria-label="{{ t.signatureArea }}" role="img"></canvas>
+<input type="hidden" name="{{ f.name }}">
+<p class="btn-row"><button type="button" class="btn btn--secondary" data-signature-clear>{{ t.signatureClear }}</button></p>
+</div>
+<label for="{{ fid }}-typed" class="signature-typed-label">{{ t.signatureTyped }}</label>
+<input type="text" id="{{ fid }}-typed" name="{{ f.name }}_typed" autocomplete="name">
+{% else %}
+<input type="{{ f.type | inputType }}" id="{{ fid }}" name="{{ f.name }}"{% if f.required %} required{% endif %}{% if f.type == 'email' %} autocomplete="email"{% elif f.type == 'tel' %} autocomplete="tel"{% endif %} aria-describedby="{% if f.hint %}{{ fid }}-hint {% endif %}{{ fid }}-error">
+{% endif %}
+<span class="field-error" id="{{ fid }}-error"></span>
+</div>
+{% endif %}
+{% endfor %}
+</fieldset>
+{% endfor %}
+<p><button type="submit" class="btn btn--large btn--memorial">{{ t.submit }}</button></p>
+<noscript><p class="notice notice--gap">{{ t.noScript }} <a href="mailto:{{ cms.site.email }}">{{ cms.site.email }}</a></p></noscript>
+</form>
+
+<div class="form-status form-status--ok" id="form-status" tabindex="-1" hidden>
+<h2 class="h3-like">{{ t.sentHeading }}</h2>
+<p>{{ t.sentBody }} <strong class="records" data-reference></strong></p>
+<p><a href="{{ root }}grave-search/">{{ t.backToSearch }}</a></p>
+</div>
+</div>
+</section>

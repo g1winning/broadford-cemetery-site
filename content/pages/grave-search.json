@@ -1,20 +1,13 @@
 {
   "title": "Grave search — Broadford Cemetery Trust (draft)",
-  "metaDescription": "Search Broadford Cemetery's interment records and find a grave on the cemetery plot map. Records are held by Chronicle and searchable from this page.",
+  "metaDescription": "Search Broadford Cemetery's burial records by name or plot, see where each grave is on a map of the grounds, and find photos and stories.",
   "breadcrumbLabel": "Grave search",
   "header": {
     "eyebrow": "Find a grave",
     "heading": "Grave search",
-    "lead": "Search Broadford Cemetery’s interment records and see exactly where a grave sits in the grounds. Type a surname into the search control inside the map below."
+    "lead": "Search the Trust’s burial records by name or plot and see exactly where a grave sits in the grounds. Zoom in on the map to read the names on each plot."
   },
-  "mapHeading": "Broadford Cemetery interactive map",
-  "mapUrl": "https://map.chronicle.rip/broadford-cemetery",
-  "mapTitle": "Broadford Cemetery interactive grave map and record search (Chronicle)",
-  "mapNote": "Map and records supplied by Chronicle. Use the search control inside the map to look up a name.",
-  "linkCard": {
-    "body": "The map also has its own website. It is easier to use in a window of its own — particularly with a screen reader, with a keyboard, or on a small phone.",
-    "buttonLabel": "Open the full Chronicle map website →"
-  },
+  "mapHeading": "Search and map",
   "notFound": {
     "label": "If you cannot find the name you are looking for",
     "body": "<p>Most of the Cemetery’s records were lost in the 1950s. A grave may exist here even though we have no record of it — and an old map recovered a few years ago has since helped us identify a number of unmarked graves.</p><p>If a search finds nothing, it is worth trying these before giving up:</p><ul><li>Search the <strong>surname only</strong>, with no given name.</li><li>Try spelling variants. Nineteenth-century clerks were inconsistent, and names were often anglicised.</li><li>Check whether the burial may have been at another cemetery in the district.</li></ul><p>The Trust may still be able to help. Please <a href=\"contact.html\">contact us</a> at <a href=\"mailto:broadfordct@gmail.com\">broadfordct@gmail.com</a> with whatever you know — a name, an approximate year, a relationship — and a trustee will look into it. Enquiries like these also help us improve the records.</p>"
@@ -26,11 +19,144 @@
     },
     {
       "label": "About the records",
-      "body": "<p>Broadford’s interment records and plot map are held by <a href=\"https://chronicle.rip/\">Chronicle</a>, the cemetery-management system the Trust uses. Roughly 2,100 plots and 2,100 interment records are published there.</p>"
+      "body": "<p>The interment records and plot map are kept by the Broadford Cemetery Trust. About 2,100 plots and 2,100 burials are recorded. Some burials are known only from death certificates, so their place in the grounds is not certain.</p>"
     },
     {
       "label": "Researching a family history",
       "body": "<p>Because most of the pre-1950s records were lost, a search may find nothing even where a burial certainly took place. The <a href=\"history.html\">History page</a> explains what happened to the records.</p>"
     }
-  ]
+  ],
+  "search": {
+    "label": "Search by name or plot",
+    "hint": "Type a surname, a full name, or a plot reference such as CE-5-7.",
+    "button": "Search",
+    "moreOptions": "More search options",
+    "firstNameLabel": "Given name",
+    "lastNameLabel": "Surname",
+    "diedFromLabel": "Died in or after (year)",
+    "diedToLabel": "Died in or before (year)",
+    "sectionLabel": "Section",
+    "anySection": "Any section",
+    "clearLabel": "Clear search",
+    "noResults": "No records match that search. Try the surname only, or a different spelling.",
+    "resultsOne": "1 record found",
+    "resultsMany": "{n} records found",
+    "tooMany": "Showing the first {shown} of {n}. Add a given name or a year to narrow the list."
+  },
+  "map": {
+    "label": "Map of Broadford Cemetery showing every plot",
+    "note": "Plots are coloured by status. Zoom in to see names written on the plots. Select a plot to see who is buried there.",
+    "legendHeading": "Show plots that are",
+    "aerialLabel": "Aerial photo",
+    "streetLabel": "Street map",
+    "locateLabel": "Show where I am",
+    "locateError": "Your location could not be found. Check that location is allowed for this site.",
+    "resetLabel": "Whole cemetery",
+    "noScript": "The map needs JavaScript switched on. Every plot and every name can still be found in the lists below."
+  },
+  "panel": {
+    "sectionLabel": "Section",
+    "rowLabel": "Row",
+    "numberLabel": "Plot",
+    "statusLabel": "Status",
+    "emptyPlot": "No burial is recorded in this plot.",
+    "detailsButton": "Full details and photos",
+    "directionsLabel": "Walking directions",
+    "shareLabel": "Copy a link to this plot",
+    "copied": "Link copied.",
+    "requestsHeading": "Requests about this plot",
+    "closeLabel": "Close"
+  },
+  "statusLabels": {
+    "Occupied": "Occupied",
+    "Reserved": "Reserved",
+    "Vacant": "Vacant",
+    "Unavailable": "Unavailable"
+  },
+  "browse": {
+    "heading": "Browse the records",
+    "body": "<p>Every name and every plot is also listed on its own page, which is easier with a screen reader or on a slow connection.</p>",
+    "peopleLink": "Every name, A to Z",
+    "plotsLink": "Every plot, by section"
+  },
+  "storiesHeading": "Stories from the cemetery",
+  "feedbackHeading": "Something wrong or missing?",
+  "feedbackBody": "<p>If a record is wrong, a name is missing, or you have a photo of a headstone, tell the Trust. Corrections from families help everyone.</p>",
+  "plot": {
+    "titleLabel": "Plot",
+    "peopleHeading": "Buried here",
+    "bornLabel": "Born",
+    "diedLabel": "Died",
+    "ageLabel": "Age",
+    "interredLabel": "Buried",
+    "typeLabel": "Type",
+    "servicemanLabel": "Service",
+    "servicemanYes": "Returned serviceman or servicewoman",
+    "storyBy": "Shared by",
+    "addStoryLink": "Share a story or photo of",
+    "storiesHeading": "Stories",
+    "inscriptionHeading": "Inscription",
+    "photosHeading": "Photos",
+    "photoAlt": "Photo of plot",
+    "detailsHeading": "About this plot",
+    "plotTypeLabel": "Kind of plot",
+    "capacitySuffix": " places used",
+    "capacityOf": "of",
+    "priceLabel": "Price",
+    "mapLink": "See it on the map"
+  },
+  "index": {
+    "peopleTitle": "Every name, A to Z",
+    "peopleLead": "Everyone recorded as buried at Broadford Cemetery, sorted by surname. Select a name to see the plot.",
+    "lettersLabel": "Jump to a letter",
+    "plotsTitle": "Every plot, by section",
+    "plotsLead": "Every plot on the cemetery map, grouped by section, with its status and the names recorded in it.",
+    "sectionsLabel": "Jump to a section",
+    "sectionPrefix": "Section",
+    "namesColumn": "Names"
+  },
+  "request": {
+    "eyebrow": "Request to the Trust",
+    "forPlot": "For plot",
+    "seePlot": "See the plot",
+    "optional": "(optional)",
+    "choose": "Choose one",
+    "fileHint": "A photo or scan: JPG, PNG or PDF, up to 10 MB.",
+    "signatureHint": "Sign with your finger or mouse in the box, or type your full name below instead.",
+    "signatureArea": "Signature box",
+    "signatureClear": "Clear signature",
+    "signatureTyped": "Or type your full name as your signature",
+    "submit": "Send to the Trust",
+    "sending": "Sending…",
+    "errorsHeading": "There is a problem",
+    "sentHeading": "Thank you. Your request has reached the Trust.",
+    "sentBody": "A trustee will be in touch. Your reference is",
+    "backToSearch": "Back to grave search",
+    "noPlotLabel": "Choose a plot first",
+    "noPlotBody": "This request is about a particular plot. Find the plot on the map, open it, and choose this request from there.",
+    "noPlotButton": "Go to grave search",
+    "noScript": "This form needs JavaScript switched on. You can also email the Trust at",
+    "failed": "The request could not be sent. Check your connection and try again, or email the Trust.",
+    "requiredMessage": "“{label}” needs an answer.",
+    "emailMessage": "Enter an email address in the form name@example.com.",
+    "fileTooBig": "That file is larger than 10 MB.",
+    "fileType": "Only JPG, PNG, WebP or PDF files can be sent."
+  },
+  "story": {
+    "heading": "Share a story",
+    "lead": "Tell us about someone buried at Broadford Cemetery, or send a photo of their headstone. A trustee reads every story before it appears on the website.",
+    "aboutLine": "About",
+    "titleLabel": "Title",
+    "bodyLabel": "Your story",
+    "bodyHint": "Who they were, what they did, how they are remembered. Up to 5,000 characters.",
+    "photosLabel": "Photos",
+    "photosHint": "Up to three photos, such as the headstone or the person. JPG or PNG, up to 10 MB each.",
+    "nameLabel": "Your name",
+    "relationshipLabel": "Your relationship to them",
+    "emailLabel": "Your email address",
+    "emailHint": "So a trustee can ask a question if needed. It is never shown on the website.",
+    "submit": "Send the story",
+    "sentHeading": "Thank you for sharing.",
+    "sentBody": "A trustee will read your story and add it to the website, usually within a few weeks."
+  }
 }
