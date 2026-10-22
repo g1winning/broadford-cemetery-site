@@ -25,6 +25,11 @@ eleventyComputed:
 </div>
 <section class="section--tight">
 <div class="container">
+<div class="notice notice--gap" data-forms-off hidden>
+<span class="notice-label">{{ r.unavailableLabel }}</span>
+<p>{{ r.unavailableBody }} <a href="mailto:{{ cms.site.email }}">{{ cms.site.email }}</a>.</p>
+</div>
+
 <div class="form-status form-status--error" id="form-errors" tabindex="-1" hidden>
 <h2 class="h3-like">{{ r.errorsHeading }}</h2>
 <ul id="form-errors-list"></ul>

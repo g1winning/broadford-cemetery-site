@@ -44,6 +44,14 @@
     var about = document.querySelector('[data-about-name]');
     if (about) { about.textContent = params.get('name') || ''; }
   }
+  // No address to send to (the records system is not online yet): say so
+  // and give the Trust's email address instead of a form that cannot be sent.
+  if (!form.getAttribute('data-endpoint')) {
+    var off = document.querySelector('[data-forms-off]');
+    if (off) { off.hidden = false; }
+    form.hidden = true;
+    return;
+  }
   if (form.getAttribute('data-needs-plot') === 'yes' && !plotRef) {
     var none = document.querySelector('[data-no-plot]');
     if (none) { none.hidden = false; }

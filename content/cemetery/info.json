@@ -1,0 +1,88 @@
+{
+ "name": "Broadford Cemetery",
+ "descriptionHtml": "<p><b><i>Broadford Cemetery is not just a resting place for the dead; it is a place of comfort, contemplation and conversation for our community.</i></b><b><i></i></b></p>The Broadford Cemetery is situated on the corner of Mollison Street and Piper St Broadford Victoria and is administered by the Broadford Cemetery Trust under the Department of Health &amp; Human Services Victoria. The Trust can be contacted at PO Box 434, Broadford, Victoria, 3658. or by email at broadfordct@gmail.com  the web page is bfct.com.au <p> <u>PLEASE NOTE</u></p><p>Due to the loss of most of the cemetery records in a fire around 1950, a great deal of work and research has been prepared by James H. and Valerie C. Charnock, with the assistance of the Cemetery Trust, The Broadford and District Historical Society and others who have supplied Death Certificates. A number of burials are also recorded of persons whose grave locations are unknown.</p><p>Some of the grave sites have been marked as unavailable due to either unsuitable position, or the possibility of it being an unknown grave.</p><p>As some of the information on the date of death has been obtained from inscriptions, cemetery plans, verbal advice and the Victorian Registry of Deaths, there may be discrepancies. The Registry only records the year in which they receive the notification of death.</p><p>If any relatives find a discrepancy with a grave detail, please feel free to notify the secretary of the Broadford Cemetery Trust via the email <a href=\"mailto:broadfordct@gmail.com\">broadfordct@gmail.com</a> . It will be necessary to provide some legal document of proof.</p><p><u><b>A BRIEF HISTORY OF THE BROADFORD CEMETERY</b></u></p><p>&#183;      In July 1867 the Government Gazette announced the first three trustees for the land which had been put aside in March of that year.</p><p>&#183;      In August 1914 the Government Gazette announced the approval of the application for a further two acres to be reserved, and by 1918 the blocks were purchased and being used.</p><p>&#183;       Sometime in the 1950&#8217;s most the cemetery records were lost. The Trust held one map until a few years ago when an old map was re-discovered, this map helped locate some of the unmarked graves.</p><p>&#183;      In the 1970&#8217;s the lawn section was created, then the niche wall for ashes and the memorial rose garden in 1999. The Dorothy Drysdale memorial garden was built in 2006.</p><p>&#183;       A second lawn section was created in 2019 and in 2020 a childrens section and another rose garden were developed.</p><p>&#183;      Some of our cemetery&#8217;s notables are: Emily Gavan, a squatter of the Sunday Creek and Mt Piper runs who was a generous benefactor of the local Church of England; the Gavan hall being named in her honour. Also, Vincent Purrier, Emily&#8217;s brother-in &#8211;law and Broadford&#8217;s first doctor. Many pioneer families who are buried in the cemetery have descendants still living in the town. Another group who made a huge contribution to our town and are well represented in the cemetery are the many migrants who made Broadford their home after the horrors of WW2. The cemetery also stands testament to the many sad stories of families who lost children to disease and accidents; one most notable tragedy was the murder of eight year old Rita Jones on Boxing Day 1899.</p><p>&#183;      The local community has always been a great supporter of the cemetery, as is displayed on the sign board inside the cemetery gates which thanks the many families who made donations towards the beautifying of the cemetery. The 2005 and 2015 open days held by the Trust to involve and inform the community in future projects attracted many locals and inspired them to revamp their family graves. </p><p>&#183;      The Broadford Cemetery has been managed by a Trust continually since its conception in 1867; the early Trustees consisting of representatives from each of the churches. These days Trustees come from all walks of life, bringing their different skills and knowledge to the job.</p>",
+ "address": {
+  "street": "Piper Street",
+  "suburb": "Broadford",
+  "state": "Victoria",
+  "postcode": "3658"
+ },
+ "email": "broadfordct@gmail.com",
+ "phone": "",
+ "website": "https://www.bfct.com.au",
+ "hours": "06:00 - 20:00",
+ "centre": [
+  -37.19938145232075,
+  145.0465250015259
+ ],
+ "bounds": {
+  "type": "Polygon",
+  "coordinates": [
+   [
+    [
+     145.0467879,
+     -37.1985183
+    ],
+    [
+     145.0454146,
+     -37.1993302
+    ],
+    [
+     145.046289,
+     -37.2002617
+    ],
+    [
+     145.0476891,
+     -37.1994797
+    ],
+    [
+     145.0467879,
+     -37.1985183
+    ]
+   ]
+  ]
+ },
+ "imagery": {
+  "url": "https://base.maps.vic.gov.au/wmts/AERIAL_WM_256/EPSG:3857:256/{z}/{x}/{y}.png",
+  "credit": "Aerial photo © State of Victoria (Vicmap Basemap, CC BY 4.0)",
+  "maxNativeZoom": 20
+ },
+ "photos": [
+  {
+   "src": "assets/cemetery/photos/broadford.jpg",
+   "thumb": "assets/cemetery/photos/thumbs/broadford.jpg",
+   "alt": ""
+  },
+  {
+   "src": "assets/cemetery/photos/shelter1.jpg",
+   "thumb": "assets/cemetery/photos/thumbs/shelter1.jpg",
+   "alt": ""
+  },
+  {
+   "src": "assets/cemetery/photos/img-3696.jpg",
+   "thumb": "assets/cemetery/photos/thumbs/img-3696.jpg",
+   "alt": ""
+  },
+  {
+   "src": "assets/cemetery/photos/side-gate.jpg",
+   "thumb": "assets/cemetery/photos/thumbs/side-gate.jpg",
+   "alt": ""
+  }
+ ],
+ "recordsNoteHtml": "",
+ "endpoints": {
+  "requests": "",
+  "stories": ""
+ },
+ "counts": {
+  "plots": 2112,
+  "people": 2147,
+  "byStatus": {
+   "Reserved": 161,
+   "Occupied": 1524,
+   "Unavailable": 239,
+   "Vacant": 188
+  }
+ },
+ "publishedAt": "2026-10-22T01:21:26.039Z"
+}

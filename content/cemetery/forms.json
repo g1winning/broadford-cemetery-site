@@ -1,0 +1,659 @@
+[
+ {
+  "key": "pre-need-plot-purchase",
+  "title": "Pre-need plot purchase",
+  "type": "Purchase Plot",
+  "intro": "",
+  "plotStatuses": [],
+  "forSaleOnly": true,
+  "sections": [
+   {
+    "title": "Description",
+    "fields": [
+     {
+      "name": "info0",
+      "label": "",
+      "type": "info",
+      "html": "<p>Your application will be assessed by the cemetery administration team. The team will be in touch to complete the purchase process. By submitting this form you are agreeing to purchase the Right of Interment of this plot if approved.</p>"
+     }
+    ]
+   },
+   {
+    "title": "Your details",
+    "fields": [
+     {
+      "name": "applicant.title",
+      "label": "Title (Mr, Mrs, Dr ...)",
+      "type": "text"
+     },
+     {
+      "name": "applicant.note",
+      "label": "Anything else the Trust should know",
+      "type": "textarea"
+     },
+     {
+      "name": "applicant.first_name",
+      "label": "Given name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "applicant.last_name",
+      "label": "Surname",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "applicant.middle_name",
+      "label": "Middle name",
+      "type": "text"
+     },
+     {
+      "name": "applicant.phone_mobile",
+      "label": "Mobile phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.phone_home",
+      "label": "Home phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.phone_office",
+      "label": "Work phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.email",
+      "label": "Email address",
+      "type": "email",
+      "required": true
+     },
+     {
+      "name": "applicant.address",
+      "label": "Street address",
+      "type": "text"
+     },
+     {
+      "name": "applicant.suburb",
+      "label": "Town or suburb",
+      "type": "text"
+     },
+     {
+      "name": "applicant.state",
+      "label": "State",
+      "type": "text"
+     },
+     {
+      "name": "applicant.country",
+      "label": "Country",
+      "type": "text"
+     },
+     {
+      "name": "applicant.postcode",
+      "label": "Postcode",
+      "type": "text"
+     },
+     {
+      "name": "applicant.gender",
+      "label": "Gender",
+      "type": "select",
+      "options": [
+       "Male",
+       "Female",
+       "Unspecified"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Right of interment",
+    "fields": [
+     {
+      "name": "right.right_type",
+      "label": "Kind of right",
+      "type": "select",
+      "required": true,
+      "options": [
+       "Burial",
+       "Cremation",
+       "Both",
+       "Unassigned"
+      ]
+     },
+     {
+      "name": "right.term_of_right",
+      "label": "How long the right lasts",
+      "type": "select",
+      "required": true,
+      "options": [
+       "Perpetual",
+       "25 Years",
+       "50 Years"
+      ]
+     },
+     {
+      "name": "right.service_need",
+      "label": "When it is needed",
+      "type": "select",
+      "required": true,
+      "options": [
+       "Pre-need",
+       "At-need"
+      ]
+     },
+     {
+      "name": "right.note",
+      "label": "Anything else the Trust should know",
+      "type": "textarea"
+     }
+    ]
+   },
+   {
+    "title": "Terms and conditions for plot purchasing",
+    "fields": [
+     {
+      "name": "info0",
+      "label": "Term and condition for plot purchasing",
+      "type": "info",
+      "html": "<p>1. An Interment Right is a contract with the Cemetery Operator that allows interments to take place in a particular location in a cemetery.\n    2. No more than two (2) Interment Rights in a cemetery can be held for any individual person without approval of the Cemetery Agency.\n    3. Interment sites can usually be dug to a depth to accommodate two coffins. However, occasionally, due to rock or stability problems not evident prior to commencement of digging the site, ground conditions may not allow for interment in an allocated plot. In these circumstances an alternate plot will be allocated\n    4. Interment Rights issued to multiple applicants are held jointly. On the death of a joint holder of an Interment Right, it passes on to the remaining joint Interment Right holders.\n    5. A certificate will be issued to the holder/s as proof of ownership and must be presented when booking an interment service.\n    6. The Holder/s of the Interment Right has the sole authority to determine who can be interred in the site and to allow Council approved memorials to be placed.\n    7. A replacement certificate may be issued if the original certificate is lost, stolen or destroyed, on application and payment of the Cemetery Operator’s associated fee.\n    8. The Interment Right application fee does not include extras, e.g. maintenance fee, memorial permit fee, interment site digging fees, other administrative charges.\n    9. The Interment Right holders’ preferred funeral director or designated person is responsible for coordinating the interment and funeral arrangements (including compliance with Cemetery Operator policies and applicable regulations).\n    10. Subject to the following, a memorial to the deceased person can be erected upon the interment site:\n       · Provided it is of the type allowed under the Cemetery Operator’s policy/procedures/requirements in that specific interment section\n       · No memorial may be erected without the Cemetery Operator’s prior written approval; and\n       · No existing memorial may be altered or removed without the Cemetery Operator’s prior written approval\n       · The Cemetery Operator reserves the right to refuse permission for any proposed memorial construction or alteration in its absolute discretion without assigning any reason. The Cemetery Operator has the right (but not the obligation) to remove any unapproved memorial or alteration without notice to any person.\n    11. The Cemetery Operator may accept and process any application concerning an Interment Right from any person/s declaring they are authorised to do so (upon provision of written or documentary evidence and payment of the association fee</p>"
+     },
+     {
+      "name": "is_agree",
+      "label": "I agree to these terms",
+      "type": "checkbox",
+      "required": true
+     }
+    ]
+   },
+   {
+    "title": "Signature",
+    "fields": [
+     {
+      "name": "signature",
+      "label": "Signature",
+      "type": "signature"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "at-need-plot-purchase",
+  "title": "At-need plot purchase",
+  "type": "Purchase Plot",
+  "intro": "",
+  "plotStatuses": [],
+  "forSaleOnly": true,
+  "sections": [
+   {
+    "title": "Right of interment",
+    "fields": [
+     {
+      "name": "right.right_type",
+      "label": "Kind of right",
+      "type": "select",
+      "required": true,
+      "options": [
+       "Burial",
+       "Cremation",
+       "Both",
+       "Unassigned"
+      ]
+     },
+     {
+      "name": "right.term_of_right",
+      "label": "How long the right lasts",
+      "type": "select",
+      "required": true,
+      "options": [
+       "Perpetual",
+       "25 Years",
+       "50 Years"
+      ]
+     },
+     {
+      "name": "right.service_need",
+      "label": "When it is needed",
+      "type": "select",
+      "required": true,
+      "options": [
+       "Pre-need",
+       "At-need"
+      ]
+     },
+     {
+      "name": "right.note",
+      "label": "Anything else the Trust should know",
+      "type": "textarea"
+     }
+    ]
+   },
+   {
+    "title": "Your details",
+    "fields": [
+     {
+      "name": "applicant.title",
+      "label": "Title (Mr, Mrs, Dr ...)",
+      "type": "text"
+     },
+     {
+      "name": "applicant.note",
+      "label": "Anything else the Trust should know",
+      "type": "textarea"
+     },
+     {
+      "name": "applicant.first_name",
+      "label": "Given name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "applicant.last_name",
+      "label": "Surname",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "applicant.middle_name",
+      "label": "Middle name",
+      "type": "text"
+     },
+     {
+      "name": "applicant.phone_mobile",
+      "label": "Mobile phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.phone_home",
+      "label": "Home phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.phone_office",
+      "label": "Work phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.email",
+      "label": "Email address",
+      "type": "email",
+      "required": true
+     },
+     {
+      "name": "applicant.address",
+      "label": "Street address",
+      "type": "text"
+     },
+     {
+      "name": "applicant.suburb",
+      "label": "Town or suburb",
+      "type": "text"
+     },
+     {
+      "name": "applicant.state",
+      "label": "State",
+      "type": "text"
+     },
+     {
+      "name": "applicant.country",
+      "label": "Country",
+      "type": "text"
+     },
+     {
+      "name": "applicant.postcode",
+      "label": "Postcode",
+      "type": "text"
+     },
+     {
+      "name": "applicant.gender",
+      "label": "Gender",
+      "type": "select",
+      "options": [
+       "Male",
+       "Female",
+       "Unspecified"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who will hold the right",
+    "fields": [
+     {
+      "name": "holder.first_name",
+      "label": "Given name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "holder.last_name",
+      "label": "Surname",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "holder.middle_name",
+      "label": "Middle name",
+      "type": "text"
+     },
+     {
+      "name": "holder.phone_mobile",
+      "label": "Mobile phone",
+      "type": "tel"
+     },
+     {
+      "name": "holder.phone_home",
+      "label": "Home phone",
+      "type": "tel"
+     },
+     {
+      "name": "holder.phone_office",
+      "label": "Work phone",
+      "type": "tel"
+     },
+     {
+      "name": "holder.email",
+      "label": "Email address",
+      "type": "email"
+     },
+     {
+      "name": "holder.address",
+      "label": "Street address",
+      "type": "text"
+     },
+     {
+      "name": "holder.suburb",
+      "label": "Town or suburb",
+      "type": "text"
+     },
+     {
+      "name": "holder.state",
+      "label": "State",
+      "type": "text"
+     },
+     {
+      "name": "holder.country",
+      "label": "Country",
+      "type": "text"
+     },
+     {
+      "name": "holder.postcode",
+      "label": "Postcode",
+      "type": "text"
+     },
+     {
+      "name": "holder.title",
+      "label": "Title (Mr, Mrs, Dr ...)",
+      "type": "text"
+     },
+     {
+      "name": "holder.gender",
+      "label": "Gender",
+      "type": "select",
+      "options": [
+       "Male",
+       "Female",
+       "Unspecified"
+      ]
+     },
+     {
+      "name": "holder.note",
+      "label": "Anything else the Trust should know",
+      "type": "textarea"
+     }
+    ]
+   },
+   {
+    "title": "The person who died",
+    "fields": [
+     {
+      "name": "deceased.first_name",
+      "label": "Given name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "deceased.last_name",
+      "label": "Surname",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "deceased.middle_name",
+      "label": "Middle name",
+      "type": "text"
+     },
+     {
+      "name": "deceased.title",
+      "label": "Title (Mr, Mrs, Dr ...)",
+      "type": "text"
+     },
+     {
+      "name": "deceased.gender",
+      "label": "Gender",
+      "type": "select",
+      "options": [
+       "Male",
+       "Female",
+       "Unspecified"
+      ]
+     },
+     {
+      "name": "deceased.date_of_birth",
+      "label": "Date of birth",
+      "type": "date"
+     },
+     {
+      "name": "deceased.date_of_death",
+      "label": "Date of death",
+      "type": "date"
+     },
+     {
+      "name": "deceased.religion",
+      "label": "Religion",
+      "type": "select",
+      "required": true,
+      "options": [
+       "Anglican",
+       "Catholic",
+       "Uniting",
+       "Jehovah Witness",
+       "All Creeds",
+       "Methodist",
+       "Baptist",
+       "Quaker",
+       "Jewish",
+       "Muslim",
+       "Presbyterian",
+       "Seventh Day Adventist",
+       "Salvation Army",
+       "Other"
+      ]
+     },
+     {
+      "name": "deceased.occupation",
+      "label": "Occupation",
+      "type": "text"
+     },
+     {
+      "name": "deceased.marital_status",
+      "label": "Marital status",
+      "type": "text"
+     }
+    ]
+   },
+   {
+    "title": "Signature",
+    "fields": [
+     {
+      "name": "signature",
+      "label": "Signature",
+      "type": "signature"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "feedback",
+  "title": "Feedback",
+  "type": "General Works",
+  "intro": "",
+  "plotStatuses": [],
+  "forSaleOnly": false,
+  "sections": [
+   {
+    "title": "Your insights are valuable to us!",
+    "fields": [
+     {
+      "name": "info0",
+      "label": "",
+      "type": "info",
+      "html": "<p>Please submit this form with any inquiries, suggestions, additional details or concerns</p>"
+     }
+    ]
+   },
+   {
+    "title": "Your details",
+    "fields": [
+     {
+      "name": "applicant.first_name",
+      "label": "Given name",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "applicant.last_name",
+      "label": "Surname",
+      "type": "text",
+      "required": true
+     },
+     {
+      "name": "applicant.middle_name",
+      "label": "Middle name",
+      "type": "text"
+     },
+     {
+      "name": "applicant.gender",
+      "label": "Gender",
+      "type": "select",
+      "options": [
+       "Male",
+       "Female",
+       "Unspecified"
+      ]
+     },
+     {
+      "name": "applicant.title",
+      "label": "Title (Mr, Mrs, Dr ...)",
+      "type": "text"
+     },
+     {
+      "name": "applicant.phone_mobile",
+      "label": "Mobile phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.phone_home",
+      "label": "Home phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.phone_office",
+      "label": "Work phone",
+      "type": "tel"
+     },
+     {
+      "name": "applicant.email",
+      "label": "Email address",
+      "type": "email",
+      "required": true
+     },
+     {
+      "name": "applicant.address",
+      "label": "Street address",
+      "type": "text"
+     },
+     {
+      "name": "applicant.suburb",
+      "label": "Town or suburb",
+      "type": "text"
+     },
+     {
+      "name": "applicant.state",
+      "label": "State",
+      "type": "text"
+     },
+     {
+      "name": "applicant.country",
+      "label": "Country",
+      "type": "text"
+     },
+     {
+      "name": "applicant.postcode",
+      "label": "Postcode",
+      "type": "text"
+     }
+    ]
+   },
+   {
+    "title": "Feedback category",
+    "fields": [
+     {
+      "name": "feedback_type",
+      "label": "What is this about?",
+      "type": "select",
+      "required": true,
+      "options": [
+       "General Inquiry",
+       "Report an Issue",
+       "Update Interment Details",
+       "Add Headstone Photo",
+       "Other"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Details",
+    "fields": [
+     {
+      "name": "details",
+      "label": "Your request",
+      "type": "textarea",
+      "hint": "Up to 1,000 characters."
+     },
+     {
+      "name": "info1",
+      "label": "",
+      "type": "info",
+      "html": "<p>Please describe your request (max 1000 characters)</p>"
+     },
+     {
+      "name": "info2",
+      "label": "",
+      "type": "info",
+      "html": "<p>Attach relevant files here (optional)</p>"
+     },
+     {
+      "name": "file_upload",
+      "label": "Photo or document",
+      "type": "file"
+     }
+    ]
+   },
+   {
+    "title": "Thanks for your feedback",
+    "fields": [
+     {
+      "name": "info0",
+      "label": "",
+      "type": "info",
+      "html": "<p>Thank you for taking the time to reach out to us. Your feedback will be reviewed promptly, and we will follow up with you as needed</p>"
+     }
+    ]
+   }
+  ]
+ }
+]

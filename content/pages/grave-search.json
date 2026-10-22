@@ -140,7 +140,9 @@
     "requiredMessage": "“{label}” needs an answer.",
     "emailMessage": "Enter an email address in the form name@example.com.",
     "fileTooBig": "That file is larger than 10 MB.",
-    "fileType": "Only JPG, PNG, WebP or PDF files can be sent."
+    "fileType": "Only JPG, PNG, WebP or PDF files can be sent.",
+    "unavailableLabel": "Online requests are not open yet",
+    "unavailableBody": "Until they are, email the Trust with the same details at"
   },
   "story": {
     "heading": "Share a story",
