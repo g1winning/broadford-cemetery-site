@@ -71,8 +71,8 @@
  ],
  "recordsNoteHtml": "",
  "endpoints": {
-  "requests": "",
-  "stories": ""
+  "requests": "https://records-editor-production.up.railway.app/api/public/broadford/requests",
+  "stories": "https://records-editor-production.up.railway.app/api/public/broadford/stories"
  },
  "counts": {
   "plots": 2112,
@@ -84,5 +84,5 @@
    "Vacant": 188
   }
  },
- "publishedAt": "2026-10-22T03:55:05.691Z"
+ "publishedAt": "2026-10-22T22:50:35.486Z"
 }
